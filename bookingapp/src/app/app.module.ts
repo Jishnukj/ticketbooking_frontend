@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     NavBarComponent,
     HomePageComponent,
     EventCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
