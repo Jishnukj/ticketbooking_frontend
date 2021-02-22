@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { EventComponent } from './event/event.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EventComponent } from './event/event.component';
     HomePageComponent,
     EventCardComponent,
     SearchBarComponent,
-    EventComponent
+    EventComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
