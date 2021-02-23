@@ -9,6 +9,8 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { EventComponent } from './event/event.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ArtistRegisterComponent } from './artist-register/artist-register.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PaymentComponent } from './payment/payment.component';
     EventCardComponent,
     SearchBarComponent,
     EventComponent,
-    PaymentComponent
+    PaymentComponent,
+    ArtistRegisterComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
