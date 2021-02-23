@@ -1,8 +1,19 @@
-<ul>
-    <li><img src="" alt="Image"></li>
-    <li>Date: {{Event.eventDate}}</li>
-    <li>Name : {{Event.eventName}}</li>
-    <li>Venue: {{Event.venueId}}</li>
-    <li>Seat: {{Event.availableSeats}}</li>
-</ul>
-<hr>
+<div class="card rounded-lg">
+    <div class="card-header bg-dark text-white">
+        {{Event.eventName | titlecase}}
+      </div>
+    
+    <img class="card-img-top" src="assets\card-image.jpg" alt="Card image cap">
+    <div class="card-body"> 
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-8 event-date">{{Event.eventDate| date:'M/d/yy, h:mm a' }}</div>
+            </div>
+        </div>
+        <ul>
+       
+        
+    </ul>
+     </div>
+  </div>
+

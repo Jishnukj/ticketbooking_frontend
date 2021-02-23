@@ -1,55 +1,45 @@
 <!-- The Middle caption part -->
-<div class = "caption-container">
-    <div class = "caption-logo">
-  
-    </div>
+<div class="caption-container">
+  <div class="caption-logo"></div>
 </div>
 
 <!--All events page based on Category-->
-<div class = "mid-container">
-    <div>
-      
+<div class="mid-container">
+  <div></div>
+
+  <div class="search">
+    <div class="srch">
+      <div class="form">
+        <input class="bg" type="text"required />
+
+        <label for="inputEmail3" class="label-name"
+          ><Span class="content-name">Search here</Span></label
+        >
+      </div>
     </div>
 
-   
-    
-    <div class = "search">
-      
-
-      <div class = "srch">
-
-    <div class = "searchtext">
-    <input type="text" value="" placeholder="Find events here" >
-  </div>
-  
-  </div>
-
-  <!-- Filter part -->
-  <div class = "flt">
-    <div class = "filter">
-      
-      <div class = "select"> Filter events based on</div>
-    <select >
-        <option value="AllEvents">All Events</option>   
-        <option value="Date">Date</option>
-        <option value="Location">Venue</option>
-      </select>
-
+    <!-- Filter part -->
+    <div class="flt">
+      <div class="filter">
+        <div class="select">Filter events based on</div>
+        <select>
+          <option value="AllEvents">All Events</option>
+          <option value="Date">Date</option>
+          <option value="Location">Venue</option>
+        </select>
+      </div>
     </div>
-
-  </div>
-    <div class = "searchBtn">
-        <button id="button2"  class = "searchbutton" value ="show"  ></button>
+    <div class="searchBtn">
+      <button id="button2" class="searchbutton" value="show"></button>
     </div>
   </div>
-
-  <div *ngFor = "let Event of Events">
-      <app-event-card [Event]="Event" ></app-event-card>
+</div>
+<div class="all-event">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-3 mt-4" *ngFor="let Event of Events">
+        <app-event-card [Event]="Event"></app-event-card>
+      </div>
+    </div>
   </div>
-
-
-  
-  </div>
-
-  
-
+</div>

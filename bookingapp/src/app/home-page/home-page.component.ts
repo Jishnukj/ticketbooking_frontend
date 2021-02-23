@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event.service';
-import {Event} from '../models/event'
+import {Event} from '../models/event';
+import {FormControl} from '@angular/forms'
 /**
  * This component serves as the home page of the website.
  */
@@ -11,7 +12,7 @@ import {Event} from '../models/event'
   providers: [EventService]
 })
 export class HomePageComponent implements OnInit {
-
+  search= new FormControl('');
   constructor(private readonly service: EventService) { }
   public Events!: Event[];
   ngOnInit(): void {
