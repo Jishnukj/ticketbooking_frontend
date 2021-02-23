@@ -43,6 +43,10 @@
     </div>
   </div>
 
+  <div *ngFor = "let Event of Events">
+      <app-event-card [Event]="Event" ></app-event-card>
+  </div>
+
 
   
   </div>
