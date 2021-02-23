@@ -5,17 +5,19 @@
 }
 .card:hover{
     box-shadow: 5px 5px 5px   rgba(117, 117, 117, 0.24);
+    cursor: pointer;
 }
 .event-date{
-    border:3px solid red;
+    border:2px solid red;
     background: rgba(255, 255, 255, 0);
     color: red;
 }
-.event-date:hover{
-    border:3px solid rgba(255, 255, 255, 0);
-    background: rgb(255, 0, 0);
-    color: white;
-}
+// .event-date:hover{
+//     border:1px solid rgba(255, 255, 255, 0);
+//     background: rgb(255, 0, 0);
+//     color: white;
+    
+// }
 .card-body{
     background:#202020  ;
 }
