@@ -16,7 +16,9 @@ import { TicketSaleComponent } from './ticket-sale/ticket-sale.component';
 import { VenuesComponent } from './venues/venues.component';
 import { EditVenueComponent } from './edit-venue/edit-venue.component';
 import { CommentComponent } from './comment/comment.component';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,9 @@ import { CommentComponent } from './comment/comment.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
