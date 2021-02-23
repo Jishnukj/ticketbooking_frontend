@@ -14,6 +14,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { TicketSaleComponent } from './ticket-sale/ticket-sale.component';
 import { VenuesComponent } from './venues/venues.component';
 import { EditVenueComponent } from './edit-venue/edit-venue.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditVenueComponent } from './edit-venue/edit-venue.component';
     CreateEventComponent,
     TicketSaleComponent,
     VenuesComponent,
-    EditVenueComponent
+    EditVenueComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
