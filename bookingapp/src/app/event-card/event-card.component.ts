@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { EventService } from '../services/event.service';
+import {Event} from '../models/event';
 /**
  * This component shows the details of a single event.
  * 
@@ -12,13 +14,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
-  styleUrls: ['./event-card.component.scss']
+  styleUrls: ['./event-card.component.scss'],
+  
 })
 export class EventCardComponent implements OnInit {
-
+  
+  @Input() Event! : Event;
   constructor() { }
+  
 
   ngOnInit(): void {
+    
+    
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event.service';
+import {Event} from '../models/event'
 /**
  * This component serves as the home page of the website.
  */
@@ -12,7 +13,7 @@ import { EventService } from '../services/event.service';
 export class HomePageComponent implements OnInit {
 
   constructor(private readonly service: EventService) { }
-  public Events = [];
+  public Events!: Event[];
   ngOnInit(): void {
     this.service.getEvents().subscribe((response)=>{
     this.Events = response;

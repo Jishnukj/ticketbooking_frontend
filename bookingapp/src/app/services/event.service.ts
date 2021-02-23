@@ -9,7 +9,7 @@ export class EventService {
   
   constructor(private readonly http: HttpClient) { }
 
-  private readonly apiurl = 'https://localhost:3000/events';
+  private readonly apiurl = 'http://localhost:3000/events';
   
   getEvents(): Observable<any>
   {
