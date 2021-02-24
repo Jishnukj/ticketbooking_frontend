@@ -19,6 +19,8 @@ import { CommentComponent } from './comment/comment.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     TicketSaleComponent,
     VenuesComponent,
     EditVenueComponent,
-    CommentComponent
+    CommentComponent,
+    AdminNavbarComponent,
+    AddEditVenueComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    FormsModule, 
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
