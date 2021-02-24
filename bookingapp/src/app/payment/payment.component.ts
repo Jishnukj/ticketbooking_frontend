@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Event } from './../models/event';
 /**
  * This is the component that loads when user clicks on 'Book Now' Button on the event details page.
  * 
@@ -14,9 +16,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly fb: FormBuilder) { }
+  @Input() Event!: Event;
+  paymentForm!: FormGroup;
 
   ngOnInit(): void {
+    this.createForms();
+  }
+
+  private createForms(): void{
+    this.paymentForm = this.fb.group({
+      tickets: new FormControl(),
+      amount: new FormControl(),
+    });
+  }
+  pay():void{
+    
   }
 
 }
