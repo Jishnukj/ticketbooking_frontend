@@ -2,7 +2,7 @@
 <!-- <div class="caption-container">
   <div class="caption-logo"></div>
 </div> -->
-<div class="car-container">
+<div class="card-container">
 <div id="slides" class="carousel slide " data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#slides" data-slide-to="0" class="active"></li>
@@ -43,11 +43,7 @@
 
         <h5></h5>
 
-        <a routerLink="/my-order-stat">
-          <button type="button" class="btn btn-outline-light btn-lg">
-            Sign Up
-          </button>
-        </a>
+      
 
       </div>
     </div>
@@ -73,6 +69,23 @@
 <!--All events page based on Category-->
 <div class="mid-container">
   <div></div>
+  <div class=" mt-4 container-fluid">
+    <div class="mt-4 row justify-content-center"><div class="mt-4 col-7 bg-light">
+   <div class="row justify-content-around">   <div class="mt-4 col-4"><select class="custom-select">
+    
+    <option selected value="1">Artist Name</option>
+    <option value="2">Venue</option>
+    <option value="3">Date</option><option value="4">Event Name</option>
+  </select></div>
+  <div class="mt-4 col-5 form">
+    <input class="bg" type="text" [formControl]="search" required />
+
+    <label for="inputEmail3" class="label-name" 
+      ><Span class="content-name">Search</Span></label
+    >
+  </div></div>
+    </div></div>
+  </div>
 
   <!-- <div class="search">
     <div class="srch">
@@ -100,12 +113,14 @@
       <button id="button2" class="searchbutton" value="show"></button>
     </div> -->
   </div>
+  <div class="card-container">
 <div class="all-event">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-3 mt-4" *ngFor="let Event of Events">
+      <div class="col-3 mt-4 rounded-lg" *ngFor="let Event of Events">
         <app-event-card [Event]="Event"></app-event-card>
       </div>
     </div>
   </div>
+</div>
 </div>

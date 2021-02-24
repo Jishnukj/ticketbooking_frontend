@@ -2,6 +2,8 @@
     box-shadow: 0px 0px 5px  rgba(59, 59, 59, 0.164);
     border: rgba(255, 255, 255, 0);
     transition-duration: 500ms;
+    max-height: 380px;
+    
 }
 .card:hover{
     box-shadow: 5px 5px 5px   rgba(117, 117, 117, 0.24);
@@ -35,3 +37,12 @@
     text-shadow: 10px 10px 10px 10px red;
     background: rgba(255, 255, 255, 0);
 }
+.ticket-number:hover{
+    color:gold;
+    text-shadow: 10px 10px 10px 10px red;
+    background: rgba(255, 255, 255, 0);
+}
+.card{
+    
+    max-width: 400px;
+  }
