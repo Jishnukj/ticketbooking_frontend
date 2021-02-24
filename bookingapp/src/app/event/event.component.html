@@ -1,14 +1,163 @@
 <div *ngFor="let event of Event">
-    <h2>{{event.eventName}}</h2>
-    <img src="{{event.imageurl}}" alt="image">
-    <p>{{event.description}}</p>
-    <ul>
-        <li>Venue :{{event.venueName}}</li>
-        <li>Date :{{event.eventDate}}</li>
-        <li>Time :{{event.eventTime}}</li>
-        <li>Tickets Available: {{event.availableSeats}}</li>
-        <li>Price :{{event.ticketPrice}}</li>
-    </ul>
-    <button class="btn btn-success">Book Now</button>
-        
+  <div class="event-detail mt-5">
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-3">
+          <div class="row"><div class="col-12">
+            <div class="card shadow">
+              <div class="card-header text-white bg-dark">Artist</div>
+              <div class="card-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4">
+                      <img
+                        src="assets/artist.png"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-8 mt-4">
+                      <h4 class="card-title text-center">
+                        {{ event.artistName }}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>  
+          
+            <div class="mt-4 col-12">
+              <div class="card shadow">
+                <div class="card-header text-white bg-dark">Share This</div>
+                <div class="card-body">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-3">
+                        <a href=""
+                          ><i
+                            class="fa fa-facebook-official fa-2x"
+                            aria-hidden="true"
+                          ></i
+                        ></a>
+                      </div>
+                      <div class="col-3">
+                        <a href=""
+                          ><i
+                            class="fa fa-instagram fa-2x"
+                            aria-hidden="true"
+                          ></i
+                        ></a>
+                      </div>
+                      <div class="col-3">
+                        <a href=""
+                          ><i class="fa fa-twitter fa-2x" aria-hidden="true"></i
+                        ></a>
+                      </div>
+                      <div class="col-3">
+                        <a href=""
+                          ><i class="fa fa-twitch fa-2x" aria-hidden="true"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-6 align-self-center">
+          <div class="card shadow">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="alert alert-info mt-4" role="alert">
+                      <strong>Note!</strong> Hurry Up Fast,
+                      <ul>
+                        <li>Early Bird Ticket Live.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-11">
+                    <p class="font-weight-bold">
+                      WHY Should u Attend This Event?
+                    </p>
+
+                    <ul>
+                      <li>Full Cover on Berverage</li>
+                      <li>BackStage Meetup With ur Artist</li>
+                      <li>Free glowSticks</li>
+                    </ul>
+                    <hr />
+                    <p class="font-weight-bold">About:</p>
+                    <p class="lead">{{ event.description }}</p>
+                    <hr />
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-6">
+                          <p class="font-weight-bold">Venue:</p>
+                          <p class="lead">{{ event.venueName }}</p>
+                          <p class="lead">
+                            <strong>Date:</strong
+                            >{{ event.eventDate | date: "d/M/yy" }}
+                          </p>
+                          <p class="lead">
+                            <strong>Time:</strong
+                            >{{ event.eventDate | date: " h:mm a" }}
+                          </p>
+                          <hr />
+                        </div>
+                        <div class="mt-5 col-6">
+                          <p class="lead">
+                            Cost:{{ event.ticketPrice | currency: "INR" }}
+                          </p>
+                          <p class="lead">
+                            Seats:{{ event.availableSeats
+                            }}<i class="fa fa-ticket" aria-hidden="true"></i>
+                          </p>
+                          <!-- <button class="btn btn-outline-success btn-lg">Buy</button> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card shadow">
+            <div class="card-body">
+              <div class="container">
+                <div class="row justify-content-around">
+                  <div class="mt-3 col-12">
+                    <div class="alert alert-success" role="alert">
+                      <strong>Fast payment With Upi!</strong> Hurry Up Now . Few
+                      tickets left
+                    </div>
+                  </div>
+                  <div class="form mt-3 col-4">
+                    <input
+                      class="bg"
+                      type="number"
+                      [formControl]="ticket"
+                      required
+                    />
+
+                    <label for="inputEmail3" class="label-name"
+                      ><Span class="content-name">Ticket</Span></label
+                    >
+                  </div>
+                  <div class="mt-3 col-4">
+                    <button class="btn btn-success btn-lg">Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

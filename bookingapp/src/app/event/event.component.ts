@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
 import { EventService } from './../services/event.service';
 import {Event} from '../models/event';
+import{FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-event',
@@ -17,6 +18,7 @@ export class EventComponent implements OnInit {
     ) { }
   public id! : number;
   public Event!: Event[];
+  ticket=new FormControl();
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.service.getEvent(this.id).subscribe(data=>{
