@@ -28,18 +28,16 @@ data-backdrop="static" data-keyboard="false"
   </div>
 
 <div *ngFor ="let venueItem of venueList">
-    <div class="card" style="width: 18rem;" 
-    data-toggle="modal" data-target="#exampleModal"
-    (click)="editClick(venueItem)">
+    <div class="card" style="width: 18rem;">
         <img class="card-img-top"  alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title"> {{venueItem.venue_name}}</h5>
         <p class="card-text">Seating Capacity : {{venueItem.total_seats}}</p>
         <p class="card-text">Ticket Price : {{venueItem.ticket_rate}}</p>
-        <!--<button type="button" class="btn btn-light mr-1"
+        <button type="button" class="btn btn-light mr-1"
                 data-toggle="modal" data-target="#exampleModal"
                 (click)="editClick(venueItem)"
-                data-backdrop="static" data-keyboard="false">Edit</button>-->
+                data-backdrop="static" data-keyboard="false">Edit</button>
      
         </div>
     </div>

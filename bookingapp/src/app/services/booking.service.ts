@@ -9,6 +9,4 @@ export class BookingService {
 
   constructor(private readonly http: HttpClient) { }
 
-  
- 
 }
