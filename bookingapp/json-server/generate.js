@@ -9,8 +9,9 @@ for(var i=0; i< 10;i++){
         eventName :faker.random.words(3),
         eventDate:faker.date.soon(3),
         eventTime:faker.time.recent(),
-        venueId:i,
+        venueName:faker.random.words(2),
         availableSeats:faker.random.number(100),
+        ticketPrice:faker.random.number(500),
         artistName : faker.name.firstName(),
         description :faker.lorem.sentences(7),
         approvalStatus : faker.random.number(1)
