@@ -14,7 +14,6 @@ import { ArtistRegisterComponent } from './artist-register/artist-register.compo
 import { CreateEventComponent } from './create-event/create-event.component';
 import { TicketSaleComponent } from './ticket-sale/ticket-sale.component';
 import { VenuesComponent } from './venues/venues.component';
-import { EditVenueComponent } from './edit-venue/edit-venue.component';
 import { CommentComponent } from './comment/comment.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -35,7 +34,7 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
     CreateEventComponent,
     TicketSaleComponent,
     VenuesComponent,
-    EditVenueComponent,
+   
     CommentComponent,
     AdminNavbarComponent,
     AddEditVenueComponent
