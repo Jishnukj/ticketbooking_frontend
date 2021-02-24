@@ -1,1 +1,14 @@
-<p>event works!</p>
+<div *ngFor="let event of Event">
+    <h2>{{event.eventName}}</h2>
+    <img src="{{event.imageurl}}" alt="image">
+    <p>{{event.description}}</p>
+    <ul>
+        <li>Venue :{{event.venueName}}</li>
+        <li>Date :{{event.eventDate}}</li>
+        <li>Time :{{event.eventTime}}</li>
+        <li>Tickets Available: {{event.availableSeats}}</li>
+        <li>Price :{{event.ticketPrice}}</li>
+    </ul>
+    <button class="btn btn-success">Book Now</button>
+        
+</div>

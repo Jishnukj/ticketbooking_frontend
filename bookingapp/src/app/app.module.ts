@@ -34,7 +34,6 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
     CreateEventComponent,
     TicketSaleComponent,
     VenuesComponent,
-   
     CommentComponent,
     AdminNavbarComponent,
     AddEditVenueComponent
