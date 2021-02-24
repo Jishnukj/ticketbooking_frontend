@@ -59,4 +59,7 @@ export class HomePageComponent implements OnInit {
       });
     }
   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+}
 }
