@@ -87,3 +87,11 @@
 
   color: #5fa8d3;
 }
+
+.form input.ng-dirty.ng-invalid.ng-touched + .label-name .content-name {
+  transform: translateY(-150%);
+
+  font-size: 14px;
+
+  color: red;
+}

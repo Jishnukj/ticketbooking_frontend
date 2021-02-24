@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{FormControl} from '@angular/forms';
 /**
  * This component serves as the navigation bar of the website.
  */
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 signUp:boolean=false;
+password= new FormControl('')
   constructor() { }
 
   ngOnInit(): void {
