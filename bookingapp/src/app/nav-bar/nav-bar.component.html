@@ -1,49 +1,141 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light bg-dp4 sticky-top text-white">
-    <div class="container-fluid">
-      <a class="navbar-brand" href=""><img src="assets/logo1.png" /></a>
-  
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarResponsive"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a routerLink="" routerLinkActive="active" class="nav-link">Homepage</a>
-          </li>
-  
-          <li class="nav-item">
-            <a routerLink="#" routerLinkActive="active" class="nav-link">View Events</a>
-          </li>
-         
-          <li class="nav-item">
-            <button
-              type="button"
-              class="btn btn-outline-info"
-              data-target="#signIn"
-              data-toggle="sign-in"
-            >
-              Sign In
-            </button>
-          </li>
-          <li class="nav-item">
-            <button
-              type="button"
-              class="btn btn-outline-info"
-              data-target="#exampleModalCentered"
-              data-toggle="modal"
-            >
-              Sign up
-            </button>
-          </li>
-        </ul>
+<nav
+  class="navbar navbar-expand-md navbar-light bg-light bg-dp4 sticky-top text-white"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href=""><img src="assets/logo1.png" /></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a routerLink="" routerLinkActive="active" class="nav-link"
+            >Homepage</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="#" routerLinkActive="active" class="nav-link"
+            >View Events</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            data-target="#signIn"
+            data-toggle="modal"
+          >
+            Sign In
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            data-target="#exampleModalCentered"
+            data-toggle="modal"
+          >
+            Sign up
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div
+  class="modal fade"
+  id="signIn"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalScrollableLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="SignIn" *ngIf="!signUp">Sign In</h5>
+        <h5 class="modal-title" id="SignIn"*ngIf="signUp">Sign Up</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="contianer-fluid" *ngIf="!signUp">
+          <div class="row justify-content-center">
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="text" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Email</Span></label
+              >
+            </div>
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="password" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Password</Span></label
+              >
+            </div>
+            <div class="col-8 mt-4">
+           <p class="lead">Dont have an account?<button type="button" class="btn btn-link" (click)="signUp=!signUp"> Sign up</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="contianer-fluid" *ngIf="signUp">
+          <div class="row justify-content-center">
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="text" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Name</Span></label
+              >
+            </div>
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="text" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Email</Span></label
+              >
+            </div>
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="password" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Password</Span></label
+              >
+            </div>
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="password" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Confirm Password</Span></label
+              >
+            </div>
+            <div class="col-8 mt-4">
+           <p class="lead">Already have an account?<button type="button" class="btn btn-link" (click)="signUp=!signUp"> Sign in</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Login</button>
+        </div>
       </div>
     </div>
-  </nav>
-  
- 
-  
+  </div>
+</div>
