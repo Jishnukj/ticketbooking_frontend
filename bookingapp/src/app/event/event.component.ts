@@ -30,7 +30,8 @@ export class EventComponent implements OnInit {
     });
   }
   gotopayment(price:number){
-    this._router.navigate(['payment/'+price]);
+    console.log('payment/'+price+'/'+this.ticket.value);
+    this._router.navigate(['payment/'+price+'/'+this.ticket.value]);
   }
 
 

@@ -23,20 +23,20 @@ export class PaymentComponent implements OnInit {
   @Input() Event!: Event;
   paymentForm!: FormGroup;
   ticket_rate!:number;
+  numberOfTickets!:number;
+  amount!:number;
   ngOnInit(): void {
     this.ticket_rate = Number(this.route.snapshot.paramMap.get('price'));
+    this.numberOfTickets = Number(this.route.snapshot.paramMap.get('tickets'));
+    this.amount = this.numberOfTickets*this.ticket_rate;
     this.createForms();
   }
 
   private createForms(): void{
     this.paymentForm = this.fb.group({
-      tickets: new FormControl(),
-      amount: new FormControl(),
+      tickets: new FormControl(this.numberOfTickets),
+      amount: new FormControl(this.amount),
     });
-  }
-  public setvalue(){
-     this.paymentForm.controls['amount'].setValue(this.ticket_rate*this.paymentForm.controls['tickets'].value);
-     console.log(this.paymentForm.controls['tickets'].value);
   }
   pay():void{
     
