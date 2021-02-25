@@ -4,7 +4,8 @@ import { Event } from '../models/event';
 @Component({
   selector: 'app-artist-page',
   templateUrl: './artist-page.component.html',
-  styleUrls: ['./artist-page.component.scss']
+  styleUrls: ['./artist-page.component.scss'],
+  providers:[EventService],
 })
 export class ArtistPageComponent implements OnInit {
 
