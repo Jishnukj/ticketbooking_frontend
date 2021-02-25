@@ -18,8 +18,9 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path: 'booking', component: TicketSaleComponent},
 {path : 'event/:id', component: EventComponent},
 {path:'payment/:price',component:PaymentComponent},
-{path:'artist-page',component:ArtistPageComponent},
-];
+{path:'artist-page',component:ArtistPageComponent},];
+
+;
 
 
 
