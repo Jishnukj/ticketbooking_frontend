@@ -41,7 +41,7 @@ export class HomePageComponent implements OnInit {
       if (this.selector == 3) {
         this.service.getUpcomingEvents().subscribe((events) => {
           this.Events = events.filter(
-            (event) => event.venue_name === this.search.value
+            (event) => event.event_date === this.search.value
           );
         });
       }
