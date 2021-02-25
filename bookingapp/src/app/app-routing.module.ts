@@ -9,6 +9,7 @@ import {EventDetailComponent} from './event-detail/event-detail.component';
 import{ TicketSaleComponent} from './ticket-sale/ticket-sale.component';
 import { PaymentComponent } from './payment/payment.component';
 
+import { ArtistPageComponent } from './artist-page/artist-page.component';
 const routes: Routes = [{path : '',component : HomePageComponent},
 {path: 'venues', component: VenuesComponent},
 {path: 'add-edit-venue', component:AddEditVenueComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path: 'booking', component: TicketSaleComponent},
 {path : 'event/:id', component: EventComponent},
 {path:'payment/:price',component:PaymentComponent},];
+{path:'artist-page',component:ArtistPageComponent},
+];
 
 
 
