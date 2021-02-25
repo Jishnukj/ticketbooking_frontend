@@ -36,7 +36,6 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     CreateEventComponent,
     TicketSaleComponent,
     VenuesComponent,
-   
     CommentComponent,
     AdminNavbarComponent,
     AddEditVenueComponent,

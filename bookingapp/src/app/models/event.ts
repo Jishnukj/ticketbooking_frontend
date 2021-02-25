@@ -1,26 +1,15 @@
 export class Event {
-    constructor(){
-        this.eventId = 0;
-        this.imageurl = "null";
-        this.eventName ="null";
-        this.eventDate = "null";
-        this.eventTime = "null";
-        this.venueName = "null";
-        this.availableSeats = 0;
-        this.ticketPrice = 0;
-        this.artistName = "null";
-        this.description = "null";
-        this.approvalStatus = false;
-    }
-    eventId : number;
-    imageurl : string;
-    eventName : string;
-    eventDate: string;
-    eventTime: string;
-    venueName: string;
-    availableSeats:number;
-    ticketPrice : number;
-    artistName : string;
-    description : string;
-    approvalStatus : boolean;
+  event_id!: number;
+  event_name!: string;
+  image!: string;
+  event_date!: string;
+  event_time!: string;
+  venue_id!: number;
+  venue_name!: string;
+  available_seats!: number;
+  total_seats!: number;
+  ticket_rate!: number;
+  artist_name!: string;
+  description!: string;
+  approval_status!: string;
 }

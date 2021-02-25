@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-
+body{
+  background: #EEEEEE;
+}
 .bg {
   background: rgba(0, 0, 0, 0);
 }
@@ -86,4 +88,12 @@
   font-size: 14px;
 
   color: #5fa8d3;
+}
+
+.form input.ng-dirty.ng-invalid.ng-touched + .label-name .content-name {
+  transform: translateY(-150%);
+
+  font-size: 14px;
+
+  color: red;
 }

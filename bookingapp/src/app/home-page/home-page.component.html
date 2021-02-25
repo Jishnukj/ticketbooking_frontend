@@ -22,7 +22,7 @@
         <h3>Stop Dreaming And Start Booking ,  Your Favorite Band Might Be In Town!!!</h3>
 
         <a routerLink="#">
-          <button type="button" class="btn btn-outline-light btn-lg">
+          <button type="button" (click)="scroll(card)" class="btn btn-outline-light btn-lg">
             All Events 
           </button>
         </a>
@@ -43,11 +43,7 @@
 
         <h5></h5>
 
-        <a routerLink="/my-order-stat">
-          <button type="button" class="btn btn-outline-light btn-lg">
-            Sign Up
-          </button>
-        </a>
+      
 
       </div>
     </div>
@@ -71,8 +67,25 @@
 </div>
 </div>
 <!--All events page based on Category-->
-<div class="mid-container">
-  <div></div>
+
+  <div class=" mt-4 container-fluid">
+    <div class="mt-4 row justify-content-center"><div class="mt-4 col-7">
+   <div class="row justify-content-around">   <div class="mt-4 col-4"><select [(ngModel)]="selector" class="custom-select">
+    
+    <option selected value="1">Artist Name</option>
+    <option value="2">Venue</option>
+    <option value="3">Date</option><option value="4">Event Name</option>
+  </select></div>
+  <div class="mt-4 col-5 form">
+    <input class="bg" type="text" [formControl]="search" required />
+
+    <label for="inputEmail3" class="label-name" 
+      ><Span class="content-name">Search</Span></label
+    >
+  </div>
+<div class="mt-4 col-3"><button class="btn btn-primary" (click)="onClickSearch()">Search<i class="fa fa-search ml-2" aria-hidden="true"></i></button></div></div>
+    </div></div>
+  </div>
 
   <!-- <div class="search">
     <div class="srch">
@@ -99,13 +112,18 @@
     <div class="searchBtn">
       <button id="button2" class="searchbutton" value="show"></button>
     </div> -->
+  <div #card class="container-fluid text-center mt-5">
+    <h1 class="display-4 mt-5">Events</h1>
   </div>
+  <hr class="dark">
+  <div class="card-container">
 <div class="all-event">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-3 mt-4" *ngFor="let Event of Events">
+      <div class="col-3 mt-4 rounded-lg" *ngFor="let Event of Events">
         <app-event-card [Event]="Event"></app-event-card>
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -2,6 +2,16 @@
     box-shadow: 0px 0px 5px  rgba(59, 59, 59, 0.164);
     border: rgba(255, 255, 255, 0);
     transition-duration: 500ms;
+    max-height: 380px;
+    border-radius: .7rem;
+    
+
+}
+.card-header{
+    border-radius: .7rem .7rem 0 0;
+}
+.black{
+    background-color: black;
 }
 .card:hover{
     box-shadow: 5px 5px 5px   rgba(117, 117, 117, 0.24);
@@ -23,15 +33,24 @@
    
     
 }
-.card-body{
-    background:#202020  ;
-}
-.card-header{
-    background:#202020 ;
-}
+// .card-body{
+//     background:#202020  ;
+// }
+// .card-header{
+//     background:#202020 ;
+// }
 .ticket-number{
     color:goldenrod ;
     
     text-shadow: 10px 10px 10px 10px red;
     background: rgba(255, 255, 255, 0);
 }
+.ticket-number:hover{
+    color:gold;
+    text-shadow: 10px 10px 10px 10px red;
+    background: rgba(255, 255, 255, 0);
+}
+.card{
+    
+    max-width: 400px;
+  }
