@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-8 mt-4">
                       <h4 class="card-title text-center">
-                        {{ event.artistName }}
+                        {{ event.artist_name }}
                       </h4>
                     </div>
                   </div>
@@ -97,23 +97,23 @@
                       <div class="row">
                         <div class="col-6">
                           <p class="font-weight-bold">Venue:</p>
-                          <p class="lead">{{ event.venueName }}</p>
+                          <p class="lead">{{ event.venue_name }}</p>
                           <p class="lead">
                             <strong>Date:</strong
-                            >{{ event.eventDate | date: "d/M/yy" }}
+                            >{{ event.event_date | date: "d/M/yy" }}
                           </p>
                           <p class="lead">
                             <strong>Time:</strong
-                            >{{ event.eventDate | date: " h:mm a" }}
+                            >{{ event.event_date | date: " h:mm a" }}
                           </p>
                           <hr />
                         </div>
                         <div class="mt-5 col-6">
                           <p class="lead">
-                            Cost:{{ event.ticketPrice | currency: "INR" }}
+                            Cost:{{ event.ticket_rate | currency: "INR" }}
                           </p>
                           <p class="lead">
-                            Seats:{{ event.availableSeats
+                            Seats:{{ event.available_seats
                             }}<i class="fa fa-ticket" aria-hidden="true"></i>
                           </p>
                           <!-- <button class="btn btn-outline-success btn-lg">Buy</button> -->

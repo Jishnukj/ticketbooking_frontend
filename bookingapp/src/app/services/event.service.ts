@@ -9,12 +9,10 @@ import { Event } from '../models/event';
 export class EventService {
   
   constructor(private readonly http: HttpClient) { }
-
-  private readonly apiurl = 'http://localhost:3000/events';
   
-  getEvents(): Observable<Event[]>
+  getUpcomingEvents(): Observable<Event[]>
   {
-      return this.http.get<Event[]>(this.apiurl);
+      return this.http.get<Event[]>('https://localhost:44332/api/Event/UpcomingEvents');
   }
 
   getEvent(id :number): Observable<Event[]>{
