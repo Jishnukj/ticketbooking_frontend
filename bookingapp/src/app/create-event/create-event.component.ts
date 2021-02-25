@@ -10,14 +10,14 @@ import { EventService } from '../services/event.service'
 export class CreateEventComponent implements OnInit {
 
   createevent= new FormGroup({
-    eventId:new FormControl(''),
-    imageurl:new FormControl(''),
-    eventName:new FormControl(''),
-    eventDate:new FormControl(''),
-    eventTime:new FormControl(''),
-    venueId:new FormControl(''),
-    availableSeats:new FormControl(''),
-    artistName:new FormControl(''),
+    event_id:new FormControl(''),
+    image:new FormControl(''),
+    event_name:new FormControl(''),
+    event_date:new FormControl(''),
+    event_time:new FormControl(''),
+    venue_id:new FormControl(''),
+    available_seats:new FormControl(''),
+    artist_name:new FormControl(''),
     description:new FormControl(''),
     
 

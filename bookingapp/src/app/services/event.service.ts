@@ -32,7 +32,7 @@ export class EventService {
   }
 
   createEvent(data: any){
-    return this. http.post("http://localhost:3000/events",data);
+    return this. http.post("https://localhost:44332/api/Event/adding",data);
   }
   getEventById(id:number) :Observable<any>
   {
