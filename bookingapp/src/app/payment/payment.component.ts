@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Event } from './../models/event';
 /**
  * This is the component that loads when user clicks on 'Book Now' Button on the event details page.
@@ -16,11 +17,14 @@ import { Event } from './../models/event';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private readonly fb: FormBuilder) { }
+  constructor(
+    private readonly fb: FormBuilder,
+    private route:ActivatedRoute,) { }
   @Input() Event!: Event;
   paymentForm!: FormGroup;
-
+  ticket_rate!:number;
   ngOnInit(): void {
+    this.ticket_rate = Number(this.route.snapshot.paramMap.get('price'));
     this.createForms();
   }
 
@@ -29,6 +33,10 @@ export class PaymentComponent implements OnInit {
       tickets: new FormControl(),
       amount: new FormControl(),
     });
+  }
+  public setvalue(){
+     this.paymentForm.controls['amount'].setValue(this.ticket_rate*this.paymentForm.controls['tickets'].value);
+     console.log(this.paymentForm.controls['tickets'].value);
   }
   pay():void{
     
