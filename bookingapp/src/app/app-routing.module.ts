@@ -4,6 +4,7 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {VenuesComponent} from './venues/venues.component';
 import {AddEditVenueComponent} from './add-edit-venue/add-edit-venue.component';
 import { EventComponent } from './event/event.component';
+<<<<<<< Updated upstream
 import {AdminHomeComponent} from './admin-home/admin-home.component';
 import {EventDetailComponent} from './event-detail/event-detail.component';
 import{ TicketSaleComponent} from './ticket-sale/ticket-sale.component';
@@ -16,6 +17,17 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path : 'event/:id', component: EventComponent},];
 
 
+=======
+import { ArtistPageComponent } from './artist-page/artist-page.component';
+
+const routes: Routes = [
+{path : '',component : HomePageComponent},
+{path: 'venues', component: VenuesComponent},
+{path: 'add-edit-venue', component:AddEditVenueComponent },
+{path : 'event/:id', component: EventComponent},
+{path:'artist-page',component:ArtistPageComponent},
+];
+>>>>>>> Stashed changes
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

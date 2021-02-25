@@ -20,8 +20,12 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
+<<<<<<< Updated upstream
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+=======
+import { ArtistPageComponent } from './artist-page/artist-page.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -39,8 +43,12 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     CommentComponent,
     AdminNavbarComponent,
     AddEditVenueComponent,
+<<<<<<< Updated upstream
     AdminHomeComponent,
     EventDetailComponent
+=======
+    ArtistPageComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
