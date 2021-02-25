@@ -1,13 +1,15 @@
 export class Event {
-  eventId!: number;
-  imageurl!: string;
-  eventName!: string;
-  eventDate!: string;
-  eventTime!: string;
-  venueName!: string;
-  availableSeats!: number;
-  ticketPrice!: number;
-  artistName!: string;
+  event_id!: number;
+  event_name!: string;
+  image!: string;
+  event_date!: string;
+  event_time!: string;
+  venue_id!: number;
+  venue_name!: string;
+  available_seats!: number;
+  total_seats!: number;
+  ticket_rate!: number;
+  artist_name!: string;
   description!: string;
-  approvalStatus!: boolean;
+  approval_status!: string;
 }
