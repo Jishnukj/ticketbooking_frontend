@@ -1,7 +1,7 @@
 <form #payment (submit)="pay()">
     <div [formGroup]="paymentForm">
         <label>Number of Tickets :</label>
-        <input type="number" formControlName="tickets" required><br>
+        <input type="number" formControlName="tickets"(onkeyup)="setvalue()"><br>
         <label>Amount :</label>
         <input type="number" formControlName="amount"  readonly><br>
         <input type="submit" value="Payment"><br>
