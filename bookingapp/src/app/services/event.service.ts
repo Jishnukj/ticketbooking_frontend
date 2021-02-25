@@ -16,6 +16,6 @@ export class EventService {
   }
 
   getEvent(id :number): Observable<Event[]>{
-    return this.http.get<Event[]>(`http://localhost:3000/events?eventId=`+id);
+    return this.http.get<Event[]>(`https://localhost:44332/api/Event/`+id);
   }
 }
