@@ -20,12 +20,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
-<<<<<<< Updated upstream
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
-=======
-import { ArtistPageComponent } from './artist-page/artist-page.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -43,12 +39,8 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     CommentComponent,
     AdminNavbarComponent,
     AddEditVenueComponent,
-<<<<<<< Updated upstream
     AdminHomeComponent,
     EventDetailComponent
-=======
-    ArtistPageComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -63,6 +55,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[EventCardComponent]
 })
 export class AppModule { }
