@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
   constructor(private readonly service: EventService) {}
   public Events!: Event[];
   ngOnInit(): void {
-    this.service.getEvents().subscribe((response) => {
+    this.service.getUpcomingEvents().subscribe((response) => {
       this.Events = response;
       console.log(response);
     });
@@ -25,35 +25,35 @@ export class HomePageComponent implements OnInit {
   onClickSearch(): void {
     if (this.search.value !== '') {
       if (this.selector == 1) {
-        this.service.getEvents().subscribe((events) => {
+        this.service.getUpcomingEvents().subscribe((events) => {
           this.Events = events.filter(
-            (event) => event.artistName === this.search.value
+            (event) => event.artist_name === this.search.value
           );
         });
       }
       if (this.selector == 2) {
-        this.service.getEvents().subscribe((events) => {
+        this.service.getUpcomingEvents().subscribe((events) => {
           this.Events = events.filter(
-            (event) => event.venueName === this.search.value
+            (event) => event.venue_name === this.search.value
           );
         });
       }
       if (this.selector == 3) {
-        this.service.getEvents().subscribe((events) => {
+        this.service.getUpcomingEvents().subscribe((events) => {
           this.Events = events.filter(
-            (event) => event.venueName === this.search.value
+            (event) => event.venue_name === this.search.value
           );
         });
       }
       if (this.selector == 4) {
-        this.service.getEvents().subscribe((events) => {
+        this.service.getUpcomingEvents().subscribe((events) => {
           this.Events = events.filter(
-            (event) => event.eventName === this.search.value
+            (event) => event.event_name === this.search.value
           );
         });
       }
     }else{
-      this.service.getEvents().subscribe((response) => {
+      this.service.getUpcomingEvents().subscribe((response) => {
         this.Events = response;
         console.log(response);
       });
