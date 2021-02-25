@@ -1,0 +1,15 @@
+<div *ngFor ="let eventItem of eventList" >
+    
+    <div class="card" style="width: 18rem;" (click)="onClick(eventItem.event_id)">
+        <img class="card-img-top" src="{{eventItem.image}}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title"> {{eventItem.event_name}}</h5>
+        <p class="card-text">Event Venue : {{eventItem.venue_name}}</p>
+        <p class="card-text">Artist Name : {{eventItem.artist_name}}</p>
+        <p class="card-text">Date : {{eventItem.event_date | date}}</p>
+        <p class="card-text">Time : {{eventItem.event_time | date:'shortTime'}}</p>
+        </div>
+        
+    </div>
+    
+</div>

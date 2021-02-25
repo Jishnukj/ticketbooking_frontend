@@ -36,15 +36,17 @@ export class AddEditVenueComponent implements OnInit {
   }
   addVenue(){
     var val = this.Venues
-    this.venueService.putVenues(val).subscribe(res=>{
+    console.log(val)
+    this.venueService.postVenues(val).subscribe(res=>{
       alert(res.toString());
     });
   }
 
   updateVenue(){
-   var val= this.Venues
-    this.venueService.postVenues(val).subscribe(res=>{
-    alert(res.toString());
+    var val= this.Venues
+    console.log(val)
+    this.venueService.putVenues(val).subscribe(res=>{
+      alert(res.toString());
     });
   }
 

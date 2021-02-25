@@ -20,6 +20,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
    
     CommentComponent,
     AdminNavbarComponent,
-    AddEditVenueComponent
+    AddEditVenueComponent,
+    AdminHomeComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ export class VenueService {
   constructor(private readonly http: HttpClient) { }
 
   private readonly apiurl = 'https://localhost:44332/api/Venue';
+  private readonly url='https://localhost:44332/api/Venue?id=';
   
   getVenues(): Observable<any>
   {
@@ -17,7 +18,7 @@ export class VenueService {
   }
   putVenues(val:any)
   {
-    return this.http.put(this.apiurl,val);
+    return this.http.patch(`${this.url}${val.venue_id}`,val);
   }
   postVenues(val:any)
   {
