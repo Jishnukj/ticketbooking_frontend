@@ -23,6 +23,8 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     ModalModule.forRoot(),
     FormsModule, 
     ReactiveFormsModule,
+    AuthGuard,
   ],
   providers: [],
   bootstrap: [AppComponent],
