@@ -23,7 +23,6 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
-import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 @NgModule({
@@ -57,7 +56,6 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ModalModule.forRoot(),
     FormsModule, 
     ReactiveFormsModule,
-    AuthGuard,
   ],
   providers: [
     {
