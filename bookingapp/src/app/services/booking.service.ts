@@ -8,5 +8,9 @@ import { Observable } from 'rxjs';
 export class BookingService {
 
   constructor(private readonly http: HttpClient) { }
-
+  private readonly apiurl="https://localhost:44332/api/Booking"
+  getAllBookings(): Observable<any>
+  {
+      return this.http.get<any>(this.apiurl+'/allbooking');
+  }
 }

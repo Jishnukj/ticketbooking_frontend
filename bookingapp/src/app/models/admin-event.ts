@@ -8,6 +8,8 @@ export class AdminEvent {
         this.venue_name = "null";
         this.artist_name = "null";
         this.description = "null";
+        this.venue_id=0;
+        this.ticket_rate=0;
         this.approval_status = "false";
     }
     event_id : number;
@@ -18,5 +20,7 @@ export class AdminEvent {
     venue_name: string;
     artist_name : string;
     description : string;
+    venue_id: number;
+    ticket_rate : number;
     approval_status : string;
 }

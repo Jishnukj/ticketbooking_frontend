@@ -24,4 +24,8 @@ export class VenueService {
   {
      return this.http.post(this.apiurl,val);
   }
+  getVenueById(id:number): Observable<any>
+  {
+      return this.http.get<any>(this.apiurl+`/${id}`);
+  }
 }

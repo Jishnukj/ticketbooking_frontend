@@ -22,6 +22,7 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     AdminNavbarComponent,
     AddEditVenueComponent,
     AdminHomeComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    AdminRegisterComponent
   ],
   imports: [
     BrowserModule,
