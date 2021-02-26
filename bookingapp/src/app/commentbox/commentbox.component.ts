@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-commentbox',
@@ -10,7 +11,10 @@ export class CommentboxComponent implements OnInit {
 
   commentInfo: Array<object> = [];
   submitted: Boolean = false;
+  count: number = 0;
   public id = 0;
+
+  @Output() commentCount = new EventEmitter<number>();
 
   
 
@@ -30,6 +34,8 @@ export class CommentboxComponent implements OnInit {
     });
 
     console.log(this.commentInfo);
+    this.count += 1;
+    this.commentCount.emit(this.count);
   
   }
 

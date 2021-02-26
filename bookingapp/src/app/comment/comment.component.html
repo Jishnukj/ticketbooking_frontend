@@ -1,4 +1,4 @@
 <p>{{value}}</p>
 <h3>Comments ({{count}})</h3>
 
-<app-commentbox></app-commentbox>
+<app-commentbox (commentCount)="receiveCommentCount($event)"></app-commentbox>
