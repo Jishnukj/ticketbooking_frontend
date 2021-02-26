@@ -19,7 +19,7 @@ import {Event} from '../models/event';
   
 })
 export class EventCardComponent implements OnInit {
-  
+  @Input() Size!:number;
   @Input() Event! : Event;
   constructor() { }
   
