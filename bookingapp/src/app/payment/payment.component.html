@@ -1,3 +1,55 @@
+<!-- <div class="mt-4 container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-4 justify-content-center">
+      <div class="card shadow">
+        <div class="card-body">
+          <form #payment (submit)="pay()">
+            <div [formGroup]="paymentForm">
+              <div class="container">
+                <div class="row">
+                  <div class="col-7 form">
+                    <input
+                      class="bg"
+                      type="number"
+                      formControlName="tickets"
+                      (onkeyup)="setvalue()"
+                      required
+                    />
+
+                    <label for="inputEmail3" class="label-name"
+                      ><Span class="content-name"
+                        >Number of Tickets</Span
+                      ></label
+                    >
+                  </div>
+                  <div class="col-7 form">
+                    <input
+                      class="bg"
+                      type="number"
+                      formControlName="amount"
+                      readonly
+                      required
+                    />
+
+                    <label for="inputEmail3" class="label-name"
+                      ><Span class="content-name">Amount</Span></label
+                    >
+                  </div>
+                </div>
+                <div class="ml-5 row justify-content-end">
+                  <div class="ml-5 col-7">
+                    <input
+                      type="submit"
+                      class="ml-5 btn btn-primary"
+                      value="Payment"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> -->
 <form #payment (submit)="pay()">
     <div [formGroup]="paymentForm">
         <label>Number of Tickets :</label>
@@ -6,5 +58,5 @@
         <input type="number" formControlName="amount"  readonly><br>
         <input type="submit" value="Payment"><br>
     </div>
-    
-</form>
+  </div>
+</div>
