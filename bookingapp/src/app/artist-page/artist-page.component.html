@@ -1,0 +1,157 @@
+<div class="event-detail mt-5">
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="card shadow">
+              <div class="card-header text-white bg-dark">Artist</div>
+              <div class="card-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4">
+                      <img
+                        src="assets/artist.png"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-8 mt-4">
+                      <h4 class="card-title text-center"></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 col-12">
+            <div class="card shadow">
+              <div class="card-header text-white bg-dark">Share This</div>
+              <div class="card-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-3">
+                      <a href=""
+                        ><i
+                          class="fa fa-facebook-official fa-2x"
+                          aria-hidden="true"
+                        ></i
+                      ></a>
+                    </div>
+                    <div class="col-3">
+                      <a href=""
+                        ><i class="fa fa-instagram fa-2x" aria-hidden="true"></i
+                      ></a>
+                    </div>
+                    <div class="col-3">
+                      <a href=""
+                        ><i class="fa fa-twitter fa-2x" aria-hidden="true"></i
+                      ></a>
+                    </div>
+                    <div class="col-3">
+                      <a href=""
+                        ><i class="fa fa-twitch fa-2x" aria-hidden="true"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-self-center">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+              
+                </div>
+                <div class="col-11">
+                  <p class="font-weight-bold">
+                    Y O U R     &nbsp; &nbsp; &nbsp;    E V E N T S:
+                  </p>
+                </div>
+                 <div class="col-11">
+                  <div class="card-container">
+                    <div class="all-event">
+                      <div class="container-fluid  container-sm">
+                        <div class="row justify-content-center row-sm">
+                          <div class="col-4 mt-4 rounded-lg " *ngFor="let Event of Events">
+                            <app-event-card [Event]="Event" [Size]=1></app-event-card>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <hr/>
+                  <div class="col-11">
+                  <p class="font-weight-bold">ABOUT:</p>
+                  <p class="lead">
+                    is an English singer, songwriter, and actor. His musical
+                    career began in 2010 as a solo contestant on the British
+                    music competition series The X Factor.
+                  </p>
+                  <hr />
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-6">
+                        <p class="font-weight-bold">Venue:</p>
+                        <p class="lead"></p>
+                        <p class="lead">
+                          <strong>Date:</strong>
+                        </p>
+                        <p class="lead">
+                          <strong>Time:</strong>
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="mt-5 col-6">
+                        <p class="lead">Cost:</p>
+                        <p class="lead">
+                          Seats:<i class="fa fa-ticket" aria-hidden="true"></i>
+                        </p>
+                        <!-- <button class="btn btn-outline-success btn-lg">Buy</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="container">
+              <div class="row justify-content-around">
+                <div class="mt-3 col-12">
+                  <div class="alert alert-success" role="alert">
+                    <strong>Fast payment With Upi!</strong> Hurry Up Now . Few
+                    tickets left
+                  </div>
+                </div>
+                <div class="form mt-3 col-4">
+                  <input class="bg" type="number" required />
+
+                  <label for="inputEmail3" class="label-name"
+                    ><Span class="content-name">Ticket</Span></label
+                  >
+                </div>
+                <div class="mt-3 col-4">
+                  <button class="btn btn-success btn-lg">Buy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+     

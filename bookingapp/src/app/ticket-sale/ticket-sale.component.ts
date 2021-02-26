@@ -2,9 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BookingService } from '../services/booking.service';
 import{Router,ActivatedRoute} from '@angular/router';
-import { VenueService } from '../services/venue.service';
-import { PublicUserService } from '../services/public-user.service';
-import { element } from 'protractor';
+
 
 
 /** this component shows the ticket sale of an event
@@ -32,8 +30,7 @@ export class TicketSaleComponent implements OnInit {
   
  
 
-  constructor(private bookingService : BookingService, private http:HttpClient,private route:ActivatedRoute,
-                private venueService : VenueService,private publicUser : PublicUserService) { }
+  constructor(private bookingService : BookingService, private http:HttpClient,private route:ActivatedRoute) { }
  
   ngOnInit(): void {
       this.bookingService.getAllBookings().subscribe((data:any )=>{

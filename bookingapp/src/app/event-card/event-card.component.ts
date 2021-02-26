@@ -15,10 +15,11 @@ import {Event} from '../models/event';
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.scss'],
+  providers: [EventService],
   
 })
 export class EventCardComponent implements OnInit {
-  
+  @Input() Size!:number;
   @Input() Event! : Event;
   constructor() { }
   
