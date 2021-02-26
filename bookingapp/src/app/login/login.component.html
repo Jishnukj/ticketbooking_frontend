@@ -1,1 +1,9 @@
-<p>login works!</p>
+<form #login (submit)="login()">
+    <div [formGroup]="loginForm">
+        <label>Email :</label>
+        <input type="email" formControlName="email"><br>
+        <label>Password :</label>
+        <input type="password" formControlName="password"><br>
+        <input type="submit" value="Login" >
+    </div>
+</form>
