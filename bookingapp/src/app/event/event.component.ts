@@ -4,6 +4,8 @@ import {ActivatedRoute} from '@angular/router'
 import { EventService } from './../services/event.service';
 import {Event} from '../models/event';
 import{FormControl} from '@angular/forms';
+import { User } from './../models/user';
+import { AuthService } from './../services/auth.service';
 
 @Component({
   selector: 'app-event',
@@ -17,10 +19,11 @@ export class EventComponent implements OnInit {
     private route:ActivatedRoute,
     private service :EventService,
     private _router: Router,
+    private authService: AuthService
     ) { }
   public id! : number;
   public Event!: Event[];
-  public Events!: Event[];
+  public User! :User;
   ticket=new FormControl();
   ngOnInit(): void {
     

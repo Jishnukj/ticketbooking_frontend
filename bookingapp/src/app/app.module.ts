@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -23,7 +23,9 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
-
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     AdminHomeComponent,
     EventDetailComponent,
     ArtistPageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,12 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     FormsModule, 
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+     }],
   bootstrap: [AppComponent],
   exports:[EventCardComponent]
 })
