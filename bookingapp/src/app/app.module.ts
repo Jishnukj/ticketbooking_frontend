@@ -25,6 +25,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     AdminHomeComponent,
     EventDetailComponent,
     ArtistPageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
