@@ -23,6 +23,7 @@ import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
+import { CommentboxComponent } from './commentbox/commentbox.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
     AdminHomeComponent,
     EventDetailComponent,
     ArtistPageComponent,
+    CommentboxComponent,
   ],
   imports: [
     BrowserModule,
