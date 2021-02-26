@@ -25,7 +25,6 @@ export class VenuesComponent implements OnInit {
   ModalTitle!: string;
   ActivateAddEditVenueComp:boolean=false;
   venue!:venues;
- // venue:any
   ngOnInit(): void {
     this.refreshEmpList();
   }

@@ -34,6 +34,7 @@ export class AdminHomeComponent implements OnInit {
   refreshEmpList(){
     this.eventService.getEvents().subscribe((data:any )=>{
       this.eventList=data;
+      this.eventList=this.eventList.filter((eventList:AdminEvent)=>eventList.approval_status!=='rejected')
       console.log(this.eventList)
     });
     

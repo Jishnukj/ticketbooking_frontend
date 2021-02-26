@@ -4,12 +4,15 @@ import{ActivatedRoute, Router} from '@angular/router';
 import { VenueService } from '../services/venue.service';
 import {venues} from '../models/venues'
 /**
- * On initial loading of this component edit venue page will be rendered with a form
+ * This component is used to display the add or edit form in the modal window in venue component,
  * which will have venue name, seating capacity  and ticket price textboxes .
  * 
  * If the input textboxes are empty,error messages will be shown since this fields are required.
  * Input fields are validated for touched and dirty properties.
  * Failing this validation will show error messages.
+ * 
+ * for adding a venue ,the add or edit form displays with an add button
+ * for editing a venue ,the add or edit form displays with an edit button
 
  */
 
@@ -22,12 +25,10 @@ export class AddEditVenueComponent implements OnInit {
 
   constructor(private venueService:VenueService,private fb:FormBuilder ) { }
   addform!: FormGroup ;
-  //venues:any;
   submitted = false; 
   @ Input() Venues !:venues;
   ngOnInit(): void {
     this.addform = this.fb.group({
-      //venueId:['',Validators.required],
       venueName:['',Validators.required],
       seatingCapacity:['',Validators.required],
       ticketPrice:['',Validators.required],
