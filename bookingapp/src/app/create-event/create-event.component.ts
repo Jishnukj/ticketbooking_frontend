@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EventService } from '../services/event.service'
@@ -23,6 +24,8 @@ export class CreateEventComponent implements OnInit {
 
 
   })
+
+  venues: any;
   
 
 
@@ -34,9 +37,15 @@ export class CreateEventComponent implements OnInit {
 
 
 
-  constructor(private events:EventService) { }
+  constructor(private events:EventService , private http:HttpClient) { }
 
   ngOnInit(): void {
+
+    let resp= this.http.get("https://localhost:44332/api/Venue/availableVenues");
+    resp.subscribe((data)=>this.venues=data);
+
+
+
   }
   createevents(){
     //console.log(this.createevent.value);
