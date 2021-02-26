@@ -20,8 +20,10 @@ export class EventComponent implements OnInit {
     ) { }
   public id! : number;
   public Event!: Event[];
+  public Events!: Event[];
   ticket=new FormControl();
   ngOnInit(): void {
+    
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.service.getEvent(this.id).subscribe(data=>{
       this.Event = data;
