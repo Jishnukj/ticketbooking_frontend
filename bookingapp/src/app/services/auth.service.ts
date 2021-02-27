@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { Message } from '../models/message';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    private _router:Router
+    ) { }
   
   userlogin(form: FormGroup){
     console.log(form.value)
@@ -27,5 +29,6 @@ export class AuthService {
   }
   logout(){
     localStorage.removeItem('token');
+    this._router.navigate(['']);
   }
 }
