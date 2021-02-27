@@ -73,68 +73,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="contianer-fluid" *ngIf="!signUp">
-          <div class="row justify-content-center">
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="text"  [formControl]="password" required=true />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Email</Span></label
-              >
-            </div>
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="password"  required />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Password</Span></label
-              >
-            </div>
-            <div class="col-8 mt-4">
-           <p class="lead">Dont have an account?<button type="button" class="btn btn-link" (click)="signUp=!signUp"> Sign up</button></p>
-            </div>
-          </div>
-        </div>
-        <div class="contianer-fluid" *ngIf="signUp">
-          <div class="row justify-content-center">
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="text" required />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Name</Span></label
-              >
-            </div>
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="text" required />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Email</Span></label
-              >
-            </div>
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="password" required />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Password</Span></label
-              >
-            </div>
-            <div class="mt-4 col-7 form">
-              <input class="bg" type="password" required />
-
-              <label for="inputEmail3" class="label-name"
-                ><Span class="content-name">Confirm Password</Span></label
-              >
-            </div>
-            <div class="col-8 mt-4">
-           <p class="lead">Already have an account?<button type="button" class="btn btn-link" (click)="signUp=!signUp"> Sign in</button></p>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="signUp=false" data-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Login</button>
-        </div>
+       
+        <app-login></app-login>
+        
       </div>
     </div>
   </div>

@@ -1,0 +1,11 @@
+.btn{ padding:10px 10px 10px 10px;
+    border:green 2px solid;
+    background-color: rgba(255,255,255,0);
+    color: green;
+}
+.btn:hover{
+    border:green 1px solid;
+    background-color: green;
+    color: white;
+    transition-duration: 500ms;
+}
