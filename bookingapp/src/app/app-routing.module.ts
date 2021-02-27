@@ -17,14 +17,13 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [{path : '',component : HomePageComponent},
 {path: 'venues', component: VenuesComponent},
 {path: 'add-edit-venue', component:AddEditVenueComponent },
-{path: 'events', component: AdminHomeComponent},
 {path: 'event-detail/:id', component: EventDetailComponent},
 {path: 'booking/:rate', component: TicketSaleComponent},
 {path : 'event/:id', component: EventComponent},
 {path : 'admin', component: AdminRegisterComponent},
 {path:'payment/:price/:tickets',component:PaymentComponent,canActivate:[AuthGuard]},
 {path:'artist-page',component:ArtistPageComponent,canActivate:[AuthGuard]},
-{path:'admin-home',component:AdminHomeComponent,canActivate:[AuthGuard]},
+{path:'events',component:AdminHomeComponent,canActivate:[AuthGuard]},
 {path:'login',component:LoginComponent},
 ];
  
