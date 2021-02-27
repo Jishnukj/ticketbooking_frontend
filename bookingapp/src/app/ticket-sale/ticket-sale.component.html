@@ -18,7 +18,7 @@
             <td  >{{ticket.username}}</td> 
             <td>{{ticket.booking_date | date}}</td> 
             <td>{{ticket.no_of_tickets}}</td>
-            <td>{{onClick(ticket)}}</td>
+            <td>{{onClick(ticket) | currency: "INR"}}</td>
          
           </tr>  
         </tbody>  

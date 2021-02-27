@@ -33,7 +33,7 @@ data-backdrop="static" data-keyboard="false"
         <div class="card-body">
         <h5 class="card-title"> {{venueItem.venue_name}}</h5>
         <p class="card-text">Seating Capacity : {{venueItem.total_seats}}</p>
-        <p class="card-text">Ticket Price : {{venueItem.ticket_rate}}</p>
+        <p class="card-text">Ticket Price : {{venueItem.ticket_rate | currency: "INR"}}</p>
         <button type="button" class="btn btn-light mr-1"
                 data-toggle="modal" data-target="#exampleModal"
                 (click)="editClick(venueItem)"
