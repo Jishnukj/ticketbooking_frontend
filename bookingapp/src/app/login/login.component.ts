@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', res.token);
       if(res.usertype == "admin"){
           console.log(res.usertype);
-          this._router.navigate(['admin-home']);
+          this._router.navigate(['events']);
       }else if(res.usertype == "artist"){
           this._router.navigate(['artist-page']);
       }else{

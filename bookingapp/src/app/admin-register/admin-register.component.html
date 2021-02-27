@@ -3,10 +3,10 @@
     <div class="card-body">
         <form [formGroup]="registerform" (ngSubmit)=register()>
             <div class="form-group" >
-                <label for="user_name">user_name</label>
+                <label for="user_name">User Name</label>
                 <input type="text" formControlName="user_name" class="form-control" [(ngModel)]="admin.user_name" [ngClass]="{'is-invalid': (submitted || registerform.get('user_name')!.touched || registerform.get('user_name')!.dirty)  && registerform.get('user_name')!.errors}" />  
                 <div  *ngIf ="(submitted || registerform.get('user_name')!.touched || registerform.get('user_name')!.dirty)  && (registerform.get('user_name')!.errors)" class="invalid-feedback" >
-                    <div *ngIf=" registerform.get('user_name')!.errors!.required">First Name is required</div>
+                    <div *ngIf=" registerform.get('user_name')!.errors!.required">User Name is required</div>
                 </div>
             
             </div>
