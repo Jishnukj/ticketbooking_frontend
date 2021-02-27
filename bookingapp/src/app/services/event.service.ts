@@ -24,7 +24,7 @@ export class EventService {
   
   getUpcomingEvents(): Observable<Event[]>
   {
-      return this.http.get<Event[]>('https://localhost:44332/api/Event/Approved/ApprovedUpcomingEvents');
+      return this.http.get<Event[]>('https://localhost:44332/api/Event/UpcomingEvents');
   }
 
   getEvent(id :number): Observable<Event[]>{
