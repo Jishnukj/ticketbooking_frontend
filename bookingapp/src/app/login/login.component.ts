@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
   login(){
     console.log('clicked');
     this._authService.userlogin(this.loginForm).subscribe(res=>{
-      console.log(res);
-      localStorage.setItem('token', res.access_token);
+      localStorage.setItem('token', res.token);
       if(res.usertype == "admin"){
           console.log(res.usertype);
           this._router.navigate(['admin-home']);
