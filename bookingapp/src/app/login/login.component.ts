@@ -32,12 +32,14 @@ export class LoginComponent implements OnInit {
     console.log('clicked');
     this._authService.userlogin(this.loginForm).subscribe(res=>{
       console.log(res);
-      localStorage.setItem('access_token', res.access_token);
-      if(res.usertype === "admin"){
+      localStorage.setItem('token', res.access_token);
+      if(res.usertype == "admin"){
+          console.log(res.usertype);
           this._router.navigate(['admin-home']);
       }else if(res.usertype == "artist"){
           this._router.navigate(['artist-page']);
       }else{
+          console.log(res.usertype);
           this._router.navigate(['']);
       }
     },
