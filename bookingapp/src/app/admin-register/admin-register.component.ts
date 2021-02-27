@@ -49,7 +49,11 @@ export class AdminRegisterComponent implements OnInit {
     this.submitted = true;
     this.adminService.postAdmin(this.admin).subscribe(data=>{
       this.output = data;
-      console.log(this.output);
+      if(data.toString()==="true"){
+        alert('Admin Added Successfully');
+        console.log(this.output);
+      }
+      this.router.navigate(['/events']);
     });
   }
 
