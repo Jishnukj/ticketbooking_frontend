@@ -2,15 +2,6 @@
 <div class="card mx-auto">
     <div class="card-body">
         <form [formGroup]="addform" >
-            <!--<div class="form-group">
-                <label for="venueId">Venue Id</label>
-                <input type="text" formControlName="venueId" class="form-control" [(ngModel)]="Venues.venue_id" [ngClass]="{'is-invalid': (submitted || addform.get('venueId')!.touched ||
-                    addform.get('venueId')!.dirty) && addform.get('venueId')!.errors}" >  
-                <div  *ngIf ="(submitted || (addform.get('venueId')!.touched )||  
-                    addform.get('venueId')!.dirty) && addform.get('venueId')!.errors" class="invalid-feedback">
-                    <div *ngIf="addform.get('venueId')!.errors!.required">Venue Name is required</div>
-                </div>
-            </div>-->
             <div class="form-group">
                 <label for="venueName">Venue Name</label>
                 <input type="text" formControlName="venueName" class="form-control" [(ngModel)]="Venues.venue_name" [ngClass]="{'is-invalid': (submitted || addform.get('venueName')!.touched ||
