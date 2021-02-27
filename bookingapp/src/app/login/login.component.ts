@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(){
+  login():void  {
+    alert("u");
 
   }
 
