@@ -36,7 +36,11 @@ export class AddEditVenueComponent implements OnInit {
     });
   }
   addVenue(){
-    var val = this.Venues
+    var val = {
+      venue_name :this.Venues.venue_name,
+      total_seats :this.Venues.total_seats,
+      ticket_rate : this.Venues.ticket_rate,
+    }
     console.log(val)
     this.venueService.postVenues(val).subscribe(res=>{
       alert(res.toString());
