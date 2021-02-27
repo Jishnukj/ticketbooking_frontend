@@ -1,6 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
-import{ActivatedRoute, Router} from '@angular/router';
 import { VenueService } from '../services/venue.service';
 import {venues} from '../models/venues'
 /**
@@ -43,7 +42,10 @@ export class AddEditVenueComponent implements OnInit {
     }
     console.log(val)
     this.venueService.postVenues(val).subscribe(res=>{
-      alert(res.toString());
+      if(res.toString()==="true"){
+        alert('Venue Added Successfully');
+      }
+      
     });
   }
 
