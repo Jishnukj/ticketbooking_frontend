@@ -47,6 +47,10 @@
             <label class="control-label col-sm-2">Venue Id</label>
             <div class="col-sm-4">
             <input type = "number" class="form-control" placeholder="Venue Id" formControlName="venue_id">
+            
+            <select>
+                <option *ngFor="let venue of venues">{{venue.venue_id}}</option>
+            </select>
             </div>
         </div>
 

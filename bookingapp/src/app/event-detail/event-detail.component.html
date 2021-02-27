@@ -8,7 +8,7 @@
             <p class="card-text">Artist Name : {{event.artist_name}}</p>
             <p class="card-text">Date : {{event.event_date | date}}</p>
             <p class="card-text">Time : {{event.event_time | date:'shortTime'}}</p>
-            <a [routerLink]="'/booking'" class="card-link" *ngIf="event.approval_status == 'true'">ticket sale</a>
+            <a [routerLink]="['/booking/',event.ticket_rate]" class="card-link" *ngIf="event.approval_status == 'true'">ticket sale</a>
         </div>
         <div>
             <p class="card-text">{{event.description}}</p>
@@ -17,7 +17,7 @@
             <button type="button" class="btn btn-primary" *ngIf ="event.approval_status == 'false'"
                   (click)="approve(event)" >Approve</button>
             <button type="button" class="btn btn-danger" *ngIf ="event.approval_status == 'false'" 
-                  >Reject</button>
+                  (click)="reject(event)">Reject</button>
         </div>
     </div>
 </div>

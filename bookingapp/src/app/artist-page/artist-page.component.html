@@ -73,20 +73,22 @@
                   <p class="font-weight-bold">
                     Y O U R     &nbsp; &nbsp; &nbsp;    E V E N T S:
                   </p>
-                  <!-- <div class="card-container">
+                </div>
+                 <div class="col-11">
+                  <div class="card-container">
                     <div class="all-event">
-                      <div class="container-fluid">
-                        <div class="row justify-content-center">
-                          <div class="col-3 mt-4 rounded-lg" *ngFor="let Event of Events">
-                             <app-event-card [Event]="Event"></app-event-card>  
-                           
+                      <div class="container-fluid  container-sm">
+                        <div class="row justify-content-center row-sm">
+                          <div class="col-4 mt-4 rounded-lg " *ngFor="let Event of Events">
+                            <app-event-card [Event]="Event" [Size]=1></app-event-card>
                           </div>
                         </div>
                       </div>
                     </div>
-                    </div> -->
-                
+                    </div>
+                  </div>
                   <hr/>
+                  <div class="col-11">
                   <p class="font-weight-bold">ABOUT:</p>
                   <p class="lead">
                     is an English singer, songwriter, and actor. His musical
@@ -117,12 +119,13 @@
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <!-- <div class="col-3">
         <div class="card shadow">
           <div class="card-body">
             <div class="container">
@@ -147,7 +150,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
+     

@@ -22,6 +22,7 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AddEditVenueComponent } from './add-edit-venue/add-edit-venue.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
@@ -44,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     AddEditVenueComponent,
     AdminHomeComponent,
     EventDetailComponent,
+    AdminRegisterComponent,
     ArtistPageComponent,
     LoginComponent,
   ],
