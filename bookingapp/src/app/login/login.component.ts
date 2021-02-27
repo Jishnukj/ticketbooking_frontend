@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../services/auth.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import {HttpErrorResponse} from '@angular/common/http'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   constructor(
     private _authService:AuthService,
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private _router:Router
     ) { }
 
   ngOnInit(): void {
@@ -24,9 +26,32 @@ export class LoginComponent implements OnInit {
       password: new FormControl(),
     });
   }
+  
 
   login(){
-
+    console.log('clicked');
+    this._authService.userlogin(this.loginForm).subscribe(res=>{
+      console.log(res);
+      localStorage.setItem('access_token', res.access_token);
+      if(res.usertype === "admin"){
+          this._router.navigate(['admin-home']);
+      }else if(res.usertype == "artist"){
+          this._router.navigate(['artist-page']);
+      }else{
+          this._router.navigate(['']);
+      }
+    },
+    err=>{
+        if(err instanceof HttpErrorResponse){
+          if(err.status === 401){
+            this._router.navigate(['login']);
+          }
+          else{
+            console.log(err);
+          }
+        }
+    }
+    );
   }
 
 }
