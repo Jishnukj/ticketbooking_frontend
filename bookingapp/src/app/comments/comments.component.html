@@ -1,3 +1,21 @@
-<p>Comments</p>
-
-
+<div class="comments">
+    <ul *ngIf="postComments !== null">
+        <li *ngFor="let post of postComments; let i = index;">
+            <div class="col-12 col-sm-12 comment-container">
+                    <p>{{post.commentTxt}}</p>
+                    <div class="actions">
+                        <span>{{post.currentDate | date: 'dd/MM/yyyy'}}</span>
+                        <span class="divider"></span>
+                        <button class="btn btn-sm btn-info" >
+                            Reply
+                        </button>
+                        <span class="divider"></span>
+                        <button class="btn btn-sm btn-danger" >
+                            <i class="fa fa-trash"></i>
+                        </button>
+                </div>
+                             
+            </div>
+        </li>
+    </ul>
+</div>

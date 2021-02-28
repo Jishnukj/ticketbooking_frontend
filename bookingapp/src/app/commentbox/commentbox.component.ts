@@ -15,7 +15,7 @@ export class CommentboxComponent implements OnInit {
   public id = 0;
 
   @Output() commentCount = new EventEmitter<number>(); //for sending the commentcount to the parent(comment) component.
-  @Output() comments = new EventEmitter<Array<object>>();
+  @Output() comments = new EventEmitter<Array<any>>();
   
 
   constructor(private fb: FormBuilder) { }

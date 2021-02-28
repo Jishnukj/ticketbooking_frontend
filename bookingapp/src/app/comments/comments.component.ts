@@ -7,10 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  @Input() postComment: Array<object> = [];
+  @Input() postComments: Array<any> = [];
 
   constructor() { }
-
+  
+  ping(){
+    console.log(this.postComments);
+    console.log(Object.values(this.postComments));
+    
+  }
   
 
   ngOnInit(): void {
