@@ -1,0 +1,21 @@
+<h3>Enter your details.</h3>
+<form [formGroup]="" (ngSubmit)=onSubmit()>
+    <label>
+        Name:
+        <input type="text">
+    </label>
+    <label>
+        Email:
+        <input type="text">
+    </label>
+    <label>
+        Password:
+        <input type="password">
+    </label>
+    <label>
+        Confirm Password:
+        <input type="password">
+    </label>
+    <p *ngIf=isIncorrect>Passwords do not match! </p>
+    <button type="submit">Register</button>
+</form>
