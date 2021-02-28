@@ -1,4 +1,7 @@
 <app-admin-navbar></app-admin-navbar>
+<button [routerLink]="'/admin'"  class="btn btn-primary">
+    Add Admin
+</button>
 <div *ngFor ="let eventItem of eventList" >
     
     <div class="card" style="width: 18rem;" (click)="onClick(eventItem.event_id)">

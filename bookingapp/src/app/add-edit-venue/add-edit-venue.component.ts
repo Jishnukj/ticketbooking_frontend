@@ -53,7 +53,9 @@ export class AddEditVenueComponent implements OnInit {
     var val= this.Venues
     console.log(val)
     this.venueService.putVenues(val).subscribe(res=>{
-      alert(res.toString());
+      if(res.toString()==="true"){
+      alert('Venue Edited successfully');
+      }
     });
   }
 
