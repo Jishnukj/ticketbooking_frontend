@@ -15,6 +15,8 @@ export class ArtistPageComponent implements OnInit {
     this.service.getUpcomingEvents().subscribe((response) => {
       this.Events = response;
       console.log(response);
+      // this.Events =events.filter(event=>event.artist_name===) ;
+      // console.log(response);
     });
   }
 

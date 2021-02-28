@@ -4,10 +4,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
+  
   constructor(
     private http:HttpClient,
     private _router:Router
@@ -20,11 +20,11 @@ export class AuthService {
     return this.http.post<{token:  string,usertype:string}>(`https://localhost:44332/api/User/login?email=${mail}&password=${form.get('password')?.value}`,form.value);
   }
 
-  loggedIn():boolean{
+  loggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('token');
   }
   logout(){

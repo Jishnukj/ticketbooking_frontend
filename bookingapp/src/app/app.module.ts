@@ -27,6 +27,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginComponent } from './login/login.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,13 +61,15 @@ import { LoginComponent } from './login/login.component';
     ModalModule.forRoot(),
     FormsModule, 
     ReactiveFormsModule,
+   
   ],
   providers: [
-    {
+    { 
       provide:HTTP_INTERCEPTORS,
+    
       useClass:TokenInterceptorService,
       multi:true
-     }],
+     },  DatePipe,],
   bootstrap: [AppComponent],
   exports:[EventCardComponent]
 })

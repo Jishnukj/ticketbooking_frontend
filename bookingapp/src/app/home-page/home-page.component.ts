@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event.service';
 import { Event } from '../models/event';
 import { FormControl } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+
 /**
  * This component serves as the home page of the website.
  */
@@ -12,15 +14,25 @@ import { FormControl } from '@angular/forms';
   providers: [EventService],
 })
 export class HomePageComponent implements OnInit {
+  myDate:Date=new Date();
+  value!:string;
+  latestdate!:string;
+  type: string = 'text';
   search = new FormControl('');
   selector: number = 1;
-  constructor(private readonly service: EventService) {}
+  constructor(private readonly service: EventService,
+    public datepipe: DatePipe) {}
   public Events!: Event[];
   ngOnInit(): void {
     this.service.getUpcomingEvents().subscribe((response) => {
       this.Events = response;
       console.log(response);
+    
     });
+
+    this.latestdate =((this.datepipe.transform(this.myDate, 'dd-MM-yy')))!;
+    console.log(this.latestdate);
+    
   }
   onClickSearch(): void {
     if (this.search.value !== '') {
@@ -40,8 +52,11 @@ export class HomePageComponent implements OnInit {
       }
       if (this.selector == 3) {
         this.service.getUpcomingEvents().subscribe((events) => {
+          console.log(this.search.value);
+          
+          
           this.Events = events.filter(
-            (event) => event.event_date === this.search.value
+            (event) => this.datepipe.transform(event.event_date,'yyyy-MM-dd') === this.search.value
           );
         });
       }
@@ -52,7 +67,7 @@ export class HomePageComponent implements OnInit {
           );
         });
       }
-    }else{
+    } else {
       this.service.getUpcomingEvents().subscribe((response) => {
         this.Events = response;
         console.log(response);
@@ -60,6 +75,16 @@ export class HomePageComponent implements OnInit {
     }
   }
   scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'});
-}
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+  changeInput(): void {
+    if (this.selector == 3) {
+      this.type = 'date';
+      this.latestdate =((this.datepipe.transform(this.myDate, 'dd-mm-yyyy')))!
+      this.search.setValue(this.latestdate);
+    } else {
+      this.type = 'text';
+     this.search.setValue('');
+    }
+  }
 }

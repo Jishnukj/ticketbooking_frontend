@@ -1,42 +1,37 @@
-<div class="conrainer-fluid ">
-    <div class="row justify-content-center">
-<form #userlogin (submit)="login()">
-    <div [formGroup]="loginForm">
+<div class="conrainer-fluid">
+  <div class="row justify-content-center">
+    <form #userlogin (submit)="login()">
+      <div [formGroup]="loginForm">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="mt-4 col-7 form">
-                    <input class="bg" type="email" formControlName="email" required />
-                
-                    <label for="inputEmail3" class="label-name" 
-                      ><Span class="content-name">Email</Span></label
-                    >
-                  </div>
-                <!-- <label>Email :</label>
-                <input type="email" formControlName="email"><br> -->
-                <div class="mt-4 col-7 form">
-                    <input class="bg" type="password" formControlName="password" required />
-                
-                    <label for="inputEmail3" class="label-name" 
-                      ><Span class="content-name">Password</Span></label
-                    >
-                  </div>
-                </div>
-                <div class="row justify-content-end">
-                  <div class="mt-4 col-4 form ">
-                <!-- <label>Password :</label>
-                <input type="password" formControlName="password"><br> -->
-                <input type="submit"  class=" btn text-center" value="Login" >
-            </div> 
+          <div class="row justify-content-center">
+            <div class="mt-4 col-7 form">
+              <input class="bg" type="email" formControlName="email" required />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Email</Span></label
+              >
+            </div>
+
+            <div class="mt-4 col-7 form">
+              <input
+                class="bg"
+                type="password"
+                formControlName="password"
+                required
+              />
+
+              <label for="inputEmail3" class="label-name"
+                ><Span class="content-name">Password</Span></label
+              >
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="mt-4 col-4 form">
+              <input type="submit" class="btn text-center" value="Login" />
+            </div>
+          </div>
         </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-</form>
-</div>
+      </div>
+    </form>
+  </div>
 </div>
