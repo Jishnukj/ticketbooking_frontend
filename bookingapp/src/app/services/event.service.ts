@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Event } from '../models/event';
 import { HttpParams } from "@angular/common/http";
-import { NgControlStatus } from '@angular/forms';
+import { NgControlStatus, FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -31,8 +31,9 @@ export class EventService {
     return this.http.get<Event[]>(`https://localhost:44332/api/Event/`+id);
   }
 
-  createEvent(data: any){
-    return this. http.post("https://localhost:44332/api/Event/adding",data);
+  createEvent(form: FormGroup){
+    console.log("Form value:\n",form.value);
+    return this. http.post("https://localhost:44332/api/Event/adding",form.value);
   }
   getEventById(id:number) :Observable<any>
   {
