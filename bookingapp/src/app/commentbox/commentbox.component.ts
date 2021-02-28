@@ -14,8 +14,8 @@ export class CommentboxComponent implements OnInit {
   count: number = 0;
   public id = 0;
 
-  @Output() commentCount = new EventEmitter<number>();
-
+  @Output() commentCount = new EventEmitter<number>(); //for sending the commentcount to the parent(comment) component.
+  @Output() comments = new EventEmitter<Array<object>>();
   
 
   constructor(private fb: FormBuilder) { }
@@ -36,6 +36,7 @@ export class CommentboxComponent implements OnInit {
     console.log(this.commentInfo);
     this.count += 1;
     this.commentCount.emit(this.count);
+    this.comments.emit(this.commentInfo);
   
   }
 

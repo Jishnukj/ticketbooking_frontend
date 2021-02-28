@@ -24,6 +24,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { CommentboxComponent } from './commentbox/commentbox.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CommentboxComponent } from './commentbox/commentbox.component';
     EventDetailComponent,
     ArtistPageComponent,
     CommentboxComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

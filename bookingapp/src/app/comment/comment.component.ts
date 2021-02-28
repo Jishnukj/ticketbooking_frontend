@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CommentComponent implements OnInit {
   @Input() value!: number; //event id of current event card that's opened
 
-
+  comments: Array<object> = [];
 
   count: number = 0;
 
@@ -17,6 +17,11 @@ export class CommentComponent implements OnInit {
   receiveCommentCount($event:number) {
     this.count = $event;
    
+  }
+
+  receiveComments($event:Array<object>){
+    this.comments = $event;
+    console.log(this.comments);
   }
 
   ngOnInit(): void {
