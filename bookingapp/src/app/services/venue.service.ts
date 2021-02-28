@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { venues } from './../models/venues';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +28,8 @@ export class VenueService {
   getVenueById(id:number): Observable<any>
   {
       return this.http.get<any>(this.apiurl+`/${id}`);
+  }
+  getVenueByDate(date:string){
+     return this.http.get<venues[]>(`https://localhost:44332/api/Venue/availableVenues/${date}`);
   }
 }

@@ -12,6 +12,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 
 const routes: Routes = [{path : '',component : HomePageComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path:'artist-page',component:ArtistPageComponent,canActivate:[AuthGuard]},
 {path:'events',component:AdminHomeComponent,canActivate:[AuthGuard]},
 {path:'login',component:LoginComponent},
+{path:'add-event',component:CreateEventComponent}
 ];
  
 
@@ -33,6 +35,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
  
+
 
 
 
