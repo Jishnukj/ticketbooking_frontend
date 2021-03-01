@@ -8,7 +8,8 @@ export class SignupserviceService {
 
   constructor(private http: HttpClient) { }
   public apiurl = '';
-  signUpUser(newUser:object){
+  signUpUser(newUser:Object){
+    console.log(newUser);
     this.http.post(this.apiurl, newUser).subscribe((result)=>{console.warn(result);});
   }
 }

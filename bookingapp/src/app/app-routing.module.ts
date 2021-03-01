@@ -14,6 +14,7 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { SignupComponent } from './signup/signup.component';
+import { SignupuserComponent } from './signupuser/signupuser.component';
 
 
 const routes: Routes = [{path : '',component : HomePageComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path:'login',component:LoginComponent},
 {path:'add-event',component:CreateEventComponent},
 {path: 'signup', component:SignupComponent},
+{path:'signupuser', component:SignupuserComponent},
 ];
  
 
