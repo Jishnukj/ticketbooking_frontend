@@ -15,6 +15,7 @@ export class SignupuserComponent implements OnInit {
   constructor(private fb: FormBuilder, private signupservice : SignupserviceService) { }
   
   newUser = new User();
+  isSuccessful: boolean = false;
   
   userSignUpForm = this.fb.group({
     name: [''],
@@ -30,9 +31,11 @@ export class SignupuserComponent implements OnInit {
       this.newUser.user_name = this.userSignUpForm.controls['name'].value;
       this.newUser.password = this.userSignUpForm.controls['password'].value;
       this.newUser.email = this.userSignUpForm.controls['email'].value;
+      this.newUser.user_type = 'user';
+      this.newUser.band_name = '';
       console.log(this.newUser);
 
-      this.signupservice.signUpUser(this.newUser);
+    this.isSuccessful =  this.signupservice.signUpUser(this.newUser);
     }
   }
 
