@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
     console.log('clicked');
     this._authService.userlogin(this.loginForm).subscribe(res=>{
       localStorage.setItem('token', res.token);
-      this._user.setCurrentUser(parseInt(res.userid));
       if(res.usertype == "admin"){
           console.log(res.usertype);
           this._router.navigate(['events']);
@@ -44,6 +43,7 @@ export class LoginComponent implements OnInit {
           console.log(res.usertype);
           this._router.navigate(['']);
       }
+      this._user.setCurrentUser(parseInt(res.userid));
     },
     err=>{
         if(err instanceof HttpErrorResponse){
