@@ -3,6 +3,7 @@ import { AuthService } from './../services/auth.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import {HttpErrorResponse} from '@angular/common/http'
+import { UserService } from './../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _authService:AuthService,
     private fb:FormBuilder,
-    private _router:Router
+    private _router:Router,
+    private _user :UserService,
     ) { }
 
   ngOnInit(): void {
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
           console.log(res.usertype);
           this._router.navigate(['']);
       }
+      this._user.setCurrentUser(parseInt(res.userid));
     },
     err=>{
         if(err instanceof HttpErrorResponse){
