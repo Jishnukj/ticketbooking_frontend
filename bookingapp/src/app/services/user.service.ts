@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
   currentUser!:User;
-  setCurrentUser(id:number){
+  setCurrentUser(id:string){
     this.http.get<User>(`https://localhost:44332/api/User/${id}`).subscribe(res=>
     {
       this.currentUser = res;

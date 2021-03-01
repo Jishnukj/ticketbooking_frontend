@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           console.log(res.usertype);
           this._router.navigate(['']);
       }
-      this._user.setCurrentUser(parseInt(res.userid));
+      this._user.setCurrentUser(res.userid);
     },
     err=>{
         if(err instanceof HttpErrorResponse){
