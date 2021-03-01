@@ -31,6 +31,7 @@ import { DatePipe } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
 import { SignupserviceService } from './services/signupservice.service';
+import { SharedService } from './services/shared.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { SignupserviceService } from './services/signupservice.service';
     SignupuserComponent,
   ],
   imports: [
-    BrowserModule,
+  
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -74,7 +76,7 @@ import { SignupserviceService } from './services/signupservice.service';
     
       useClass:TokenInterceptorService,
       multi:true
-     },  DatePipe,],
+     },  DatePipe,SharedService],
   bootstrap: [AppComponent],
   exports:[EventCardComponent]
 })
