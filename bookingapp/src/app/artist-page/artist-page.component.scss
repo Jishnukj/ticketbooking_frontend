@@ -1,25 +1,38 @@
-.card-container{
-    height: 95% !important; 
-    width:95%;
-    margin:auto;
-   
-    }
+.card-container {
+  height: 95% !important;
+  width: 95%;
+  margin: auto;
+}
 
-    // .small{
+// .small{
 
-    //   //transform: scale(1,0.7);
-    //   resize: horizontal;
-      
-    // }
-    // .row-sm{
-    //     // transform: scale(0.8,0.8);
-    //     width:100%;
-    //     height:30%;
-    //     resize: horizontal;
-       
-        
-    // }
-    // .container-sm{
-    //     transform: scale(1,0.8);   
-    //     resize: horizontal;
-    // }
+//   //transform: scale(1,0.7);
+//   resize: horizontal;
+
+// }
+// .row-sm{
+//     // transform: scale(0.8,0.8);
+//     width:100%;
+//     height:30%;
+//     resize: horizontal;
+
+// }
+// .container-sm{
+//     transform: scale(1,0.8);
+//     resize: horizontal;
+// }
+.fa-facebook-official {
+  color: #3b5998;
+}
+.fa-instagram {
+  color: #3f729b;
+}
+.fa-twitter {
+  color: #00acee;
+}
+.fa-twitch {
+  color: #6441a5;
+}
+.fa-plus-circle {
+  color: white;
+}

@@ -3,6 +3,7 @@ import { EventService } from '../services/event.service';
 import { Event } from '../models/event';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../services/user.service';
+import{User} from '../models/user'
 @Component({
   selector: 'app-artist-page',
   templateUrl: './artist-page.component.html',
@@ -16,6 +17,7 @@ export class ArtistPageComponent implements OnInit {
     private readonly _router: ActivatedRoute,
     private readonly userService: UserService
   ) {}
+  public Artist!:User;
   public Events!: Event[];
   ngOnInit(): void {
     this.id = this._router.snapshot.paramMap.get('id')!;
@@ -24,6 +26,7 @@ export class ArtistPageComponent implements OnInit {
       console.log(this.id);
 
       this.userService.GetUser(this.id).subscribe((user) => {
+        this.Artist=user;
         this.Events = events.filter((event) => 
          
           
