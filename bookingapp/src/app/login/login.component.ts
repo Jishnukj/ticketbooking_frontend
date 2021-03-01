@@ -3,21 +3,20 @@ import { AuthService } from './../services/auth.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import {HttpErrorResponse} from '@angular/common/http'
+import { SharedService } from './../services/shared.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers:[AuthService],
+  providers:[AuthService,SharedService],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  currentUserId!: string;
-  CurrentUserName!: string;
-  CurrentUserType!: string;
   constructor(
     private _authService:AuthService,
     private fb:FormBuilder,
     private _router:Router,
+    private _shared: SharedService,
     ) { }
 
   ngOnInit(): void {
@@ -45,9 +44,9 @@ export class LoginComponent implements OnInit {
         const { redirect } = window.history.state;
         this._router.navigateByUrl(redirect || '');
       }
-      this.currentUserId = res.userid;
-      this.CurrentUserName = res.username;
-      this.CurrentUserType = res.usertype;
+      this._shared.setCurrentUserId(res.userid);
+      this._shared.setCurrentUserName(res.username);
+      this._shared.setCurrentUserType(res.usertype);
     },
     err=>{
         if(err instanceof HttpErrorResponse){
