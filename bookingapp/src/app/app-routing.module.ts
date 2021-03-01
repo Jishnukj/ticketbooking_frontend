@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomePageComponent} from './home-page/home-page.component';
 import {VenuesComponent} from './venues/venues.component';
@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
+import { ArtistRegisterComponent } from './artist-register/artist-register.component';
 
 
 const routes: Routes = [{path : '',component : HomePageComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path:'add-event',component:CreateEventComponent},
 {path: 'signup', component:SignupComponent},
 {path:'signupuser', component:SignupuserComponent},
+{path: 'artist-register', component : ArtistRegisterComponent},
 ];
  
 
@@ -39,6 +41,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
  
+
 
 
 
