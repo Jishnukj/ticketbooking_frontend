@@ -17,7 +17,7 @@ export class AuthService {
     console.log(form.value)
     let mail = form.get('email')?.value;
     mail =mail.replace("@","%40");
-    return this.http.post<{token:  string,usertype:string}>(`https://localhost:44332/api/User/login?email=${mail}&password=${form.get('password')?.value}`,form.value);
+    return this.http.post<{token:  string,usertype:string,userid:string,username:string}>(`https://localhost:44332/api/User/login?email=${mail}&password=${form.get('password')?.value}`,form.value);
   }
 
   loggedIn(): boolean {
