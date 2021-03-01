@@ -2,7 +2,7 @@
     box-shadow: 0px 5px 5px  rgba(59, 59, 59, 0.164);
     border: rgba(255, 255, 255, 0);
     transition-duration: 500ms;
-    max-height: 380px;
+    
     border-radius: .7rem;
     
 
@@ -58,4 +58,98 @@
  }
  .small-body{
     padding:5px 5px 5px 5px;
+ }
+ .image{
+     position: relative;
+     
+ }
+ .img-img{
+     display: block;
+     width: 100%;
+ }
+ .img-overlay-appr{
+     position:absolute;
+     top: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0,0,0,0.6);
+     color: #ffffff;
+     font-family:'Courier New', Courier, monospace;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     transition: opacity 0.3s;
+ }
+ .img-overlay-appr>*{
+     transform: translateY(20px);
+     transition: transform 0.3s;
+ }
+ .img-overlay-appr:hover>*{
+     transform: translateY(0);
+ }
+ .img-overlay-appr:hover{
+     opacity: 1;
+     background: green;
+ }
+ .img-overlay-rej{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.img-overlay-rej>*{
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+.img-overlay-rej:hover>*{
+    transform: translateY(0);
+}
+.img-overlay-rej:hover{
+    opacity: 1;
+    background: red;
+}
+.img-overlay-unchk{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.img-overlay-unchk>*{
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+.img-overlay-unchk:hover>*{
+    transform: translateY(0);
+}
+.img-overlay-unchk:hover{
+    opacity: 1;
+    background: grey;
+}
+ .img-title{
+     font-size: 1em;
+     font-weight: bold;
+
  }

@@ -17,7 +17,7 @@
                       />
                     </div>
                     <div class="col-8 mt-4">
-                      <h4 class="card-title text-center"></h4>
+                      <h4 class="card-title text-center">{{Artist.user_name}}</h4>
                     </div>
                   </div>
                 </div>
@@ -88,10 +88,10 @@
                     </div>
                   </div>
                   <hr/>
-                  <div class="col-11">
+                  <div class="mt-5 col-11">
                   <p class="font-weight-bold">ABOUT:</p>
                   <p class="lead">
-                    is an English singer, songwriter, and actor. His musical
+                    {{Artist.user_name}} is an English singer, songwriter, and actor. His musical
                     career began in 2010 as a solo contestant on the British
                     music competition series The X Factor.
                   </p>
@@ -125,32 +125,25 @@
           </div>
         </div>
       </div>
-      <!-- <div class="col-3">
+      <div class="col-3">
         <div class="card shadow">
           <div class="card-body">
             <div class="container">
               <div class="row justify-content-around">
-                <div class="mt-3 col-12">
-                  <div class="alert alert-success" role="alert">
-                    <strong>Fast payment With Upi!</strong> Hurry Up Now . Few
-                    tickets left
-                  </div>
+                <div class="mt-3 col-12 text-center">
+                  <div class="alert alert-info" role="alert">
+                    <strong>Add Events </strong>
+                  </div> 
                 </div>
-                <div class="form mt-3 col-4">
-                  <input class="bg" type="number" required />
+                <div class="form ml-5 mt-3 col-12 ">
+                  <button class=" ml-5 align-self-center btn btn-success btn-lg"><i class="fa fa-plus-circle mr-4 fa-lg" aria-hidden="true"></i>Events</button>
+                </div>
 
-                  <label for="inputEmail3" class="label-name"
-                    ><Span class="content-name">Ticket</Span></label
-                  >
-                </div>
-                <div class="mt-3 col-4">
-                  <button class="btn btn-success btn-lg">Buy</button>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
