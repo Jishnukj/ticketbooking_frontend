@@ -28,6 +28,9 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { DatePipe } from '@angular/common';
+import { SignupComponent } from './signup/signup.component';
+import { SignupuserComponent } from './signupuser/signupuser.component';
+import { SignupserviceService } from './services/signupservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,8 @@ import { DatePipe } from '@angular/common';
     AdminRegisterComponent,
     ArtistPageComponent,
     LoginComponent,
+    SignupComponent,
+    SignupuserComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
    
   ],
-  providers: [
+  providers: [SignupserviceService,
     { 
       provide:HTTP_INTERCEPTORS,
     
