@@ -1,1 +1,34 @@
-<p>artist-register works!</p>
+<h3>Enter your details.</h3>
+<form [formGroup]="artistRegisterForm" (ngSubmit)=onSubmit()>
+    <label>
+        Name:
+        <input type="text" formControlName="name">
+    </label>
+    <br>
+    <br>
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+    </label>
+    <br>
+    <br>
+    <label>
+        Password:
+        <input type="password" formControlName="password">
+    </label>
+    <br>
+    <br>
+    <label>
+        Confirm Password:
+        <input type="password" formControlName="confirmPassword">
+    </label>
+    <br>
+    <p *ngIf=isIncorrect>Passwords do not match! </p>
+    
+    <label>
+        Band Name
+        <input type="text" formControlName="bandname">
+    </label>
+    <br>
+    <button type="submit">Register</button>
+</form>

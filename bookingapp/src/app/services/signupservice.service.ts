@@ -11,12 +11,6 @@ export class SignupserviceService {
   response = false;
   signUpUser(newUser:Object){
     console.log(newUser);
-    this.http.post(this.apiurl, newUser).subscribe((result)=>{console.warn(result);
-    if(result){
-      this.response = true;
-    }
-    });
-
-    return this.response;
+    return this.http.post(this.apiurl, newUser);
   }
 }

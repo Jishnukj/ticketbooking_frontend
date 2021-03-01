@@ -13,9 +13,10 @@ export class SignupuserComponent implements OnInit {
 
   isIncorrect: boolean = false;
   constructor(private fb: FormBuilder, private signupservice : SignupserviceService) { }
+  ngOnInit(): void {
+  }
   
   newUser = new User();
-  isSuccessful: boolean = false;
   
   userSignUpForm = this.fb.group({
     name: [''],
@@ -35,11 +36,16 @@ export class SignupuserComponent implements OnInit {
       this.newUser.band_name = '';
       console.log(this.newUser);
 
-    this.isSuccessful =  this.signupservice.signUpUser(this.newUser);
-    }
-  }
-
-  ngOnInit(): void {
-  }
-
+      this.signupservice.signUpUser(this.newUser).subscribe(res=>{
+        if(res.toString() == "true"){
+          alert("Registration Successful!");
+        }
+        else{
+          alert("Registration Failed");
+        }
+      
+      });
+      this.userSignUpForm.reset(this.userSignUpForm.value);
+}
+}
 }
