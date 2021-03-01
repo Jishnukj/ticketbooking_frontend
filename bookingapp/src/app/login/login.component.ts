@@ -12,11 +12,13 @@ import { UserService } from './../services/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  currentUserId!: string;
+  CurrentUserName!: string;
+  CurrentUserType!: string;
   constructor(
     private _authService:AuthService,
     private fb:FormBuilder,
     private _router:Router,
-    private _user :UserService,
     ) { }
 
   ngOnInit(): void {
@@ -40,10 +42,12 @@ export class LoginComponent implements OnInit {
       }else if(res.usertype == "artist"){
           this._router.navigate(['artist-page']);
       }else{
-          console.log(res.usertype);
-          this._router.navigate(['']);
+        const { redirect } = window.history.state;
+        this._router.navigateByUrl(redirect || '');
       }
-      this._user.setCurrentUser(res.userid);
+      this.currentUserId = res.userid;
+      this.CurrentUserName = res.username;
+      this.CurrentUserType = res.usertype;
     },
     err=>{
         if(err instanceof HttpErrorResponse){

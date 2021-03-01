@@ -27,7 +27,7 @@
         </li>
 
         <li class="nav-item">
-          <button
+          <button *ngIf="!auth.loggedIn()" 
             type="button"
             class="btn btn-outline-info"
             data-target="#signIn"
@@ -37,7 +37,8 @@
           </button>
         </li>
         <li class="nav-item">
-          <button  routerLink="/signup" routerLinkActive="active"
+          <button routerLink="/signup" routerLinkActive="active"
+           *ngIf="!auth.loggedIn()"
             type="button"
             class="btn btn-outline-info"
             data-target="#exampleModalCentered"
@@ -45,7 +46,20 @@
           >
             Sign up
           </button>
-        </li>
+          </li>>
+          <li class="nav-item">
+            <button
+              *ngIf="auth.loggedIn()"
+              (click)="auth.logout()"
+              type="button"
+              class="btn btn-outline-info"
+            >
+              Logout
+            </button>
+          </li>
+          <li>
+            <h5></h5>
+          </li>
       </ul>
     </div>
   </div>
@@ -61,9 +75,8 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header bg-dark text-white">
-        <h5 class="modal-title" id="SignIn" *ngIf="!auth.loggedIn()">Sign In</h5>
-        <h5 class="modal-title" id="SignUp" *ngIf="!auth.loggedIn()">Sign Up</h5>
-        <h5 class="modal-title" id="LogOut" *ngIf="auth.loggedIn()" (click)="auth.logout()">Logout</h5>
+        <h5 class="modal-title" id="SignIn" >Sign In</h5>
+        <h5 class="modal-title" id="SignUp" >Sign Up</h5>
         <button
           type="button"
           class="close text-white"
