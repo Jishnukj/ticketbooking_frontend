@@ -36,11 +36,12 @@ export class LoginComponent implements OnInit {
     console.log('clicked');
     this._authService.userlogin(this.loginForm).subscribe(res=>{
       localStorage.setItem('token', res.token);
+      this.loginForm.get('email')?.value
       if(res.usertype == "admin"){
           console.log(res.usertype);
-          this._router.navigate(['events']);
+          this._router.navigate([`events/`]);
       }else if(res.usertype == "artist"){
-          this._router.navigate(['artist-page']);
+          this._router.navigate([`artist-page/${res.userid}`]);
       }else{
         const { redirect } = window.history.state;
         this._router.navigateByUrl(redirect || '');

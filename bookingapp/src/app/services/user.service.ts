@@ -9,9 +9,6 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
   GetUser(id:string){
-    return this.http.get<User>(`https://localhost:44332/api/User/${id}`).subscribe(res=>
-    {
-      console.log(res);
-    });
+    return this.http.get<User>(`https://localhost:44332/api/User/${id}`)
   }
 }
