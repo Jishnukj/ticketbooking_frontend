@@ -41,6 +41,7 @@ export class EventDetailComponent implements OnInit {
     this.eventService.getEventById(this.id).subscribe(data=>{
       this.eventlist = data;
       console.log(this.eventlist);
+      
 
     });
   
