@@ -9,8 +9,13 @@ export class BookingService {
 
   constructor(private readonly http: HttpClient) { }
   private readonly apiurl="https://localhost:44332/api/Booking"
+  private readonly apiurl_booking = "https://localhost:44332/api/Booking/booking"
   getAllBookings(): Observable<any>
   {
       return this.http.get<any>(this.apiurl+'/allbooking');
+  }
+
+  bookTickets(booking: any){
+    this.http.post(this.apiurl_booking,booking).subscribe(response => {console.warn(response);});
   }
 }
