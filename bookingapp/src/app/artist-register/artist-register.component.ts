@@ -34,7 +34,7 @@ export class ArtistRegisterComponent implements OnInit {
       this.newUser.password = this.artistRegisterForm.controls['password'].value;
       this.newUser.email = this.artistRegisterForm.controls['email'].value;
       this.newUser.user_type = 'artist';
-      this.newUser.band_name = this.artistRegisterForm.controls['bandname'].value;;
+      this.newUser.band_name = this.artistRegisterForm.controls['bandname'].value;
       console.log(this.newUser);
 
      this.signupservice.signUpUser(this.newUser).subscribe(res=>{
