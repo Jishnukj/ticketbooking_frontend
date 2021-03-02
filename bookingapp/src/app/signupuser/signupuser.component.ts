@@ -3,7 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { User } from '../models/user';
 import { SignupserviceService } from '../services/signupservice.service';
-
+/**
+ * This component loads when the user clicks Sign Up as User link.
+ * On initial loading of this component, the page renders with a reactive form which takes the data of the user to create the user account.
+ * Once the form is filled and when the Submit button is clicked, the form data is then used to create a newUser object.
+ * The newUser object is passed as argument to the method signUpUser() of the SignupserviceService instance signupservice.
+ * The method POST the newUser into the database, thus creating a new user account.
+ *  Members:
+ * isIncorrect - A boolean variable which returns true of the passwords entered are not matching.
+ * newUser - A new instance of User class.
+ * fb - instance of Formbuilder class which is used to hold the form data.
+ * signupservice - instance of the service SignupserviceService through which the newUser data is added to the database.
+ * onSubmit() - a method that invokes when the submit button is clicked.
+ */
 @Component({
   selector: 'app-signupuser',
   templateUrl: './signupuser.component.html',
