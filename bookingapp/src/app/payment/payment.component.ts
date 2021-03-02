@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { BookingService } from '../services/booking.service';
 import { SharedService } from '../services/shared.service';
 import { Event } from './../models/event';
 /**
@@ -19,6 +20,7 @@ import { Event } from './../models/event';
 export class PaymentComponent implements OnInit {
 
   constructor(
+    private bookingservice : BookingService,
     private _shared: SharedService,
     private readonly fb: FormBuilder,
     private route:ActivatedRoute,) { }
@@ -37,13 +39,13 @@ export class PaymentComponent implements OnInit {
     this.amount = this.numberOfTickets*this.ticket_rate;
     this.createForms();
     this._shared.getCurrentUserType().subscribe(res=>{
-      this.userId = res;
+      this.userType = res;
        })
     this._shared.getCurrentUserName().subscribe(res=>{
      this.userName = res;
     })
     this._shared.getCurrentUserId().subscribe(res=>{
-      this.userType = res;
+      this.userId = res;
     })
     this._shared.getEventId().subscribe(res=>{
       this.eventId = res;
@@ -56,9 +58,20 @@ export class PaymentComponent implements OnInit {
       amount: new FormControl(this.amount),
     });
   }
+  
   pay():void{
     console.log('User Id: ',this.userId);
     console.log('EventId:',this.eventId);
+    console.log(this.numberOfTickets);
+    console.log(new Date());
+    let booking = {
+      user_id : this.userId,
+      event_id : this.eventId,
+      booking_date : new Date(),
+      no_of_tickets : this.numberOfTickets
+    };
+    console.log(booking);
+    this.bookingservice.bookTickets(booking);
   }
 
 }
