@@ -58,6 +58,7 @@ export class PaymentComponent implements OnInit {
   }
   pay():void{
     console.log('User Id: ',this.userId);
+    console.log('EventId:',this.eventId);
   }
 
 }
