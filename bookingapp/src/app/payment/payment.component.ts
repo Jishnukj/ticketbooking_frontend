@@ -6,11 +6,31 @@ import { SharedService } from '../services/shared.service';
 import { Event } from './../models/event';
 /**
  * This is the component that loads when user clicks on 'Book Now' Button on the event details page.
+ * On loading, this component also initializes values of some of the declared variables and also invokes the createForms() method which creates the reactive form for taking the ticket booking data.
+ * 
  * 
  * There is an input number field for the user to select the number of seats that he/she wants to book.
  * Based on the seats selected price is generated and is shown for the user
  * 
- * There is a "Continue payment" button that lets the user to proceed with the payment. 
+ * There is a "payment" button that lets the user to proceed with the payment. 
+ * If the Payment is successful, the brower will show an alert message that it's successful.
+ * 
+ * Members:
+ * bookingservice - An instance of BookingService which has methods that perform CRUD operations in the database.
+ * _shared - An instance of SharedService through which values passed from two other unrelated components are accessed.
+ * fb - An instance of the FormBuilder class used to build the form.
+ * route - An instance of Activatedroute through which data of components routed from this component is accessed. Here ticket rate and the number of tickets selected for booking is accessed.
+ * paymentForm - formdata which holds the data related to payment.
+ * ticket_rate - variable used to store the ticket rate accessed through route.
+ * numberOfTickets - variable used to store the number of tickets selected for booking.
+ * amount - stores the total price of all tickets selected.
+ * userId - stores the user Id of the user that books the ticket.
+ * userName - stores the name of the user that books the ticket.
+ * usetType - stores the acccount type of the user that books the ticket.
+ * eventId - stores the event Id of the respective event selected for booking tickets.
+ * createForms() - creates bulds the form.
+ * pay() - method is involked when the Payment button is clicked. it is through this method that the booking service is called and the booking data is sent to the database.
+ * 
  */
 @Component({
   selector: 'app-payment',
