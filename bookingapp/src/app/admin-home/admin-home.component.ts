@@ -27,11 +27,11 @@ export class AdminHomeComponent implements OnInit {
   constructor(private eventService : EventService, private http:HttpClient,  private router:Router) { }
 
   ngOnInit(): void {
-    this.refreshEmpList();
+    this.refreshEventList();
     
   }
 
-  refreshEmpList(){
+  refreshEventList(){
     this.eventService.getEvents().subscribe((data:any )=>{
       this.eventList=data;
       this.eventList=this.eventList.filter((eventList:AdminEvent)=>eventList.approval_status!=='rejected')
