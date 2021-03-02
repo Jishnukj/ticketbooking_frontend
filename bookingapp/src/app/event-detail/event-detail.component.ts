@@ -49,7 +49,7 @@ export class EventDetailComponent implements OnInit {
 
   approve(event:AdminEvent)
   {
-    event.approval_status="approved";
+    event.approval_status="approve";
     this.eventService.postApprove(event).subscribe(data=>{
       console.log(data)});
     console.log(event.approval_status);
@@ -57,7 +57,7 @@ export class EventDetailComponent implements OnInit {
 
   reject(event:AdminEvent)
   {
-    event.approval_status="rejected";
+    event.approval_status="reject";
     this.eventService.postApprove(event).subscribe(data=>{
       console.log(data)});
     console.log(event.approval_status);
