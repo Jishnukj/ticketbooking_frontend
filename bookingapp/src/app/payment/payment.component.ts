@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from '../services/shared.service';
 import { Event } from './../models/event';
 /**
  * This is the component that loads when user clicks on 'Book Now' Button on the event details page.
@@ -18,6 +19,7 @@ import { Event } from './../models/event';
 export class PaymentComponent implements OnInit {
 
   constructor(
+    private _shared: SharedService,
     private readonly fb: FormBuilder,
     private route:ActivatedRoute,) { }
   @Input() Event!: Event;
@@ -39,7 +41,7 @@ export class PaymentComponent implements OnInit {
     });
   }
   pay():void{
-    
+    this._shared.currentUserId$.subscribe(id =>{console.log(id);});
   }
 
 }
