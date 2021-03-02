@@ -75,8 +75,8 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header bg-dark text-white">
-        <h5 class="modal-title" id="SignIn" >Sign In</h5>
-        <h5 class="modal-title" id="SignUp" >Sign Up</h5>
+        <h5 class="modal-title"  *ngIf="!signUp" >Sign In</h5>
+        <h5 class="modal-title"  *ngIf="signUp" >Sign Up</h5>
         <button
           type="button"
           class="close text-white"
@@ -87,9 +87,22 @@
         </button>
       </div>
       <div class="modal-body">
-        
-        <app-login></app-login>
-        
+        <div *ngIf="!signUp">
+         <app-login ></app-login>
+         <div class=" mt-3 alert alert-warning" role="alert">
+          <strong>Dont have an account!  </strong>
+          <a  (click)="signUp=!signUp"class="alert-link">Sign Up</a>
+           and try submitting again.
+        </div>
+        </div>
+        <div *ngIf="signUp">
+        <app-signupuser ></app-signupuser>
+        <div class=" mt-3 alert alert-success" role="alert">
+          <strong>Dont have an account!  </strong>
+          <a  (click)="signUp=!signUp"class="alert-link">Sign Up</a>
+           and try submitting again.
+        </div>
+      </div>
       </div>
     </div>
   </div>
