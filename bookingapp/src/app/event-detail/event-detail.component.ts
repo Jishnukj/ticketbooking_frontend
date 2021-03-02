@@ -28,7 +28,8 @@ export class EventDetailComponent implements OnInit {
   public id! : number;
   public eventlist: AdminEvent[]=[];
 
-  constructor(private eventService : EventService, private http:HttpClient,private route:ActivatedRoute) { 
+  constructor(private eventService : EventService, private http:HttpClient,private route:ActivatedRoute,
+                  private router:Router) { 
     
   }
   
@@ -47,7 +48,7 @@ export class EventDetailComponent implements OnInit {
 
   approve(event:AdminEvent)
   {
-    event.approval_status="true";
+    event.approval_status="approved";
     this.eventService.postApprove(event).subscribe(data=>{
       console.log(data)});
     console.log(event.approval_status);
@@ -59,6 +60,8 @@ export class EventDetailComponent implements OnInit {
     this.eventService.postApprove(event).subscribe(data=>{
       console.log(data)});
     console.log(event.approval_status);
+    
+    
   }
 
 }
