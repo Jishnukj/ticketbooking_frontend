@@ -10,7 +10,7 @@ export class SharedService {
   private _currentUserId = new BehaviorSubject<string>('');
   private _currentUserName = new BehaviorSubject<string>('');
   private _currentUserType = new BehaviorSubject<string>('');
-  private eventId = new Subject<number>();
+  private eventId = new BehaviorSubject<number>(0);
   
   setEventId(id:number){
     this.eventId.next(id);
