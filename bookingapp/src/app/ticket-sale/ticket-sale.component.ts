@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BookingService } from '../services/booking.service';
 import{Router,ActivatedRoute} from '@angular/router';
-
+import {Booking} from '../models/booking';
 
 
 /** this component shows the ticket sale of an event
@@ -24,8 +24,8 @@ export class TicketSaleComponent implements OnInit {
   bookingList:any;
   venue :any
   totalprice!:number;
-  user_id!:number;
-
+  bookingData:any;
+  id!:number;
   rate!:number;
   
  
@@ -33,9 +33,11 @@ export class TicketSaleComponent implements OnInit {
   constructor(private bookingService : BookingService, private http:HttpClient,private route:ActivatedRoute) { }
  
   ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
       this.bookingService.getAllBookings().subscribe((data:any )=>{
-        this.bookingList=data;
-        console.log(this.bookingList)
+              this.bookingList=data;
+              this.bookingList=this.bookingList.filter((bookingList:Booking)=>bookingList.event_id==this.id)
+              console.log(this.bookingList)
       });
       this.rate = Number(this.route.snapshot.paramMap.get('rate'));
       

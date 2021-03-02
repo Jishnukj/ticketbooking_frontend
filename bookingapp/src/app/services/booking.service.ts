@@ -22,4 +22,8 @@ export class BookingService {
       }
     });
   }
+  getBookingById(id:number): Observable<any>
+  {
+      return this.http.get<any>(this.apiurl+`/${id}`);
+  }
 }
