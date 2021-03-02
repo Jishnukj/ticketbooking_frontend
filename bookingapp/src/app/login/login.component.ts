@@ -8,7 +8,6 @@ import { SharedService } from './../services/shared.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers:[AuthService,SharedService],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
@@ -45,8 +44,11 @@ export class LoginComponent implements OnInit {
         this._router.navigateByUrl(redirect || '');
       }
       this._shared.setCurrentUserId(res.userid);
+      
       this._shared.setCurrentUserName(res.username);
+       
       this._shared.setCurrentUserType(res.usertype);
+     
     },
     err=>{
         if(err instanceof HttpErrorResponse){

@@ -14,7 +14,7 @@ import { Event } from './../models/event';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss']
+  styleUrls: ['./payment.component.scss'],
 })
 export class PaymentComponent implements OnInit {
 
@@ -27,11 +27,27 @@ export class PaymentComponent implements OnInit {
   ticket_rate!:number;
   numberOfTickets!:number;
   amount!:number;
+  userId!:string;
+  userName!:string;
+  userType!:string;
+  eventId!:number;
   ngOnInit(): void {
     this.ticket_rate = Number(this.route.snapshot.paramMap.get('price'));
     this.numberOfTickets = Number(this.route.snapshot.paramMap.get('tickets'));
     this.amount = this.numberOfTickets*this.ticket_rate;
     this.createForms();
+    this._shared.getCurrentUserType().subscribe(res=>{
+      this.userId = res;
+       })
+    this._shared.getCurrentUserName().subscribe(res=>{
+     this.userName = res;
+    })
+    this._shared.getCurrentUserId().subscribe(res=>{
+      this.userType = res;
+    })
+    this._shared.getEventId().subscribe(res=>{
+      this.eventId = res;
+    })
   }
 
   private createForms(): void{
@@ -41,7 +57,7 @@ export class PaymentComponent implements OnInit {
     });
   }
   pay():void{
-    this._shared.currentUserId$.subscribe(id =>{console.log(id);});
+    console.log('User Id: ',this.userId);
   }
 
 }

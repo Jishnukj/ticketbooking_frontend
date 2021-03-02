@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,21 +7,33 @@ import { Subject } from 'rxjs';
 export class SharedService {
 
   constructor() { }
-  private _currentUserId = new Subject<string>();
-  private _currentUserName = new Subject<string>();
-  private _currentUserType = new Subject<string>();
+  private _currentUserId = new BehaviorSubject<string>('');
+  private _currentUserName = new BehaviorSubject<string>('');
+  private _currentUserType = new BehaviorSubject<string>('');
+  private eventId = new Subject<number>();
   
-  currentUserId$ = this._currentUserId.asObservable();
-  currentUserName$ = this._currentUserName.asObservable();
-  currentUserType$ = this._currentUserType.asObservable();
-
+  setEventId(id:number){
+    this.eventId.next(id);
+  }
+  getEventId(){
+    return this.eventId.asObservable();
+  }
   setCurrentUserId(id: string){
     this._currentUserId.next(id);
+  }
+  getCurrentUserId():Observable<string>{
+    return this._currentUserId.asObservable();
   }
   setCurrentUserName(name:string){
     this._currentUserName.next(name);
   }
+  getCurrentUserName():Observable<string>{
+    return this._currentUserName.asObservable();
+  }
   setCurrentUserType(usertype:string){
     this._currentUserType.next(usertype);
+  }
+  getCurrentUserType():Observable<string>{
+    return this._currentUserType.asObservable();
   }
 }
