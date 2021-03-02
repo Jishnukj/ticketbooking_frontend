@@ -42,7 +42,7 @@ export class EventService {
   postApprove(event:any)
   {
     console.log(event.event_id,event.approval_status);
-    return this.http.post(`https://localhost:44332/api/Event/appove?event_id=${event.event_id}&approve=${event.approval_status}`,event);
+    return this.http.post(`https://localhost:44332/api/Event/approve?event_id=${event.event_id}&approve=${event.approval_status}`,event);
   }
  
 }

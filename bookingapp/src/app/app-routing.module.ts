@@ -33,6 +33,7 @@ const routes: Routes = [{path : '',component : HomePageComponent},
 {path: 'signup', component:SignupComponent},
 {path:'signupuser', component:SignupuserComponent},
 {path: 'artist-register', component : ArtistRegisterComponent},
+
 ];
  
 
