@@ -35,7 +35,28 @@
           ><Span class="content-name">confirmPassword</Span></label
         >
       </div>
+      <div class="col-7 mt-3 form" *ngIf="isArtist">
+        <input
+          class="bg"
+          type="text"
+          formControlName="confirmPassword"
+          required
+        />
+
+        <label for="inputEmail3" class="label-name"
+          ><Span class="content-name">Band Name</Span></label
+        >
+      </div>
     </div>
+    <div class="ml-2 row justify-content-center">
+      <div class="ml-5 mt-4 col-8 form">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1"   (change)="isArtist=!isArtist" >
+          <label class=" toggle custom-control-label" for="customSwitch1">Sign Up as an Artist!</label>
+        </div>
+      </div>
+    </div>
+    
     <div class="row justify-content-end">
         <div class="mt-4 col-4 form">
           <input type="submit" class="btn text-center"  />
@@ -63,17 +84,10 @@
     <label>
         Confirm Password:
         <input type="password" formControlName="confirmPassword">
-<<<<<<< Updated upstream
-    </label>
-    <br>
-    <p *ngIf=isIncorrect>Passwords do not match! </p>
-    <button type="submit">Register</button>
-=======
     </label> -->
 
   <!-- <br />
   <p *ngIf="isIncorrect">Passwords do not match!</p>
   <button type="submit">Register</button>
   <p *ngIf="isSuccessful">Registration Successful!</p> -->
->>>>>>> Stashed changes
 </form>

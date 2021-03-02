@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { User } from '../models/user';
 import { SignupserviceService } from '../services/signupservice.service';
-
+import {FormControl} from '@angular/forms'
+ 
 @Component({
   selector: 'app-signupuser',
   templateUrl: './signupuser.component.html',
@@ -17,7 +18,7 @@ export class SignupuserComponent implements OnInit {
   }
   
   newUser = new User();
-  
+  isArtist:boolean=false;
   userSignUpForm = this.fb.group({
     name: [''],
     email: [''],
