@@ -24,7 +24,7 @@ export class HomePageComponent implements OnInit {
     public datepipe: DatePipe) {}
   public Events!: Event[];
   ngOnInit(): void {
-    this.service.getUpcomingEvents().subscribe((response) => {
+    this.service.getUpcomingApprovedEvents().subscribe((response) => {
       this.Events = response;
       console.log(response);
     
