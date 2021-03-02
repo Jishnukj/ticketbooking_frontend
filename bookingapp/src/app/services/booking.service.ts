@@ -16,6 +16,10 @@ export class BookingService {
   }
 
   bookTickets(booking: any){
-    this.http.post(this.apiurl_booking,booking).subscribe(response => {console.warn(response);});
+    this.http.post(this.apiurl_booking,booking).subscribe(response => {console.warn(response);
+      if(response){
+        alert("Booking Successful!");
+      }
+    });
   }
 }

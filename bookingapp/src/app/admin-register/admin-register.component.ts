@@ -52,8 +52,9 @@ export class AdminRegisterComponent implements OnInit {
       if(data.toString()==="true"){
         alert('Admin Added Successfully');
         console.log(this.output);
+        this.router.navigate(['/events']);
       }
-      this.router.navigate(['/events']);
+      
     });
   }
 
