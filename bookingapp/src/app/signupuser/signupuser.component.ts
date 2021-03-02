@@ -24,6 +24,7 @@ export class SignupuserComponent implements OnInit {
     email: [''],
     password: [''],
     confirmPassword: [''],
+    bandname: ['']
   });
 
   onSubmit(){
@@ -33,8 +34,13 @@ export class SignupuserComponent implements OnInit {
       this.newUser.user_name = this.userSignUpForm.controls['name'].value;
       this.newUser.password = this.userSignUpForm.controls['password'].value;
       this.newUser.email = this.userSignUpForm.controls['email'].value;
-      this.newUser.user_type = 'user';
-      this.newUser.band_name = '';
+      this.newUser.band_name = this.userSignUpForm.controls['bandname'].value;
+      if(this.newUser.band_name === ''){
+        this.newUser.user_type = 'user'
+      }
+      else{
+        this.newUser.user_type = 'artist';
+      }
       console.log(this.newUser);
 
       this.signupservice.signUpUser(this.newUser).subscribe(res=>{
