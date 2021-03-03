@@ -28,10 +28,11 @@ export class AdminRegisterComponent implements OnInit {
   constructor(private adminService : AdminService,public router:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    
     this.registerform = this.fb.group({
       user_name:['',Validators.required],
       password:['',Validators.required],
-      email:['',Validators.required],
+      email:['',[Validators.required, Validators.email]]
 
     });
     this.admin={

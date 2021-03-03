@@ -14,7 +14,8 @@
                 <label for="email">Email</label>
                 <input type="email" formControlName="email" class="form-control" [(ngModel)]="admin.email" [ngClass]="{'is-invalid': (submitted || registerform.get('email')!.touched || registerform.get('email')!.dirty)  && registerform.get('email')!.errors}" />  
                 <div  *ngIf ="(submitted || registerform.get('email')!.touched || registerform.get('email')!.dirty)  && (registerform.get('email')!.errors)" class="invalid-feedback" >
-                    <div *ngIf=" registerform.get('email')!.errors!.required">Email is required</div>
+                    <div *ngIf=" registerform.get('email')!.errors!.required ">Email is required</div>
+                    <div *ngIf="registerform.get('email')!.errors!.email" >Enter a valid Email</div>
                 </div>
             </div>
 

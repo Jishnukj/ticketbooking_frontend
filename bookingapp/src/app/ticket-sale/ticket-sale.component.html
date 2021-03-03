@@ -13,11 +13,11 @@
         </thead>  
         <tbody>  
           <tr *ngFor="let ticket of bookingList"> 
-            <td >{{ticket.booking_id}}</td> 
-            <td  >{{ticket.username}}</td> 
+            <td>{{ticket.booking_id}}</td> 
+            <td>{{ticket.username}}</td> 
             <td>{{ticket.booking_date | date}}</td> 
             <td>{{ticket.no_of_tickets}}</td>
-            <td>{{onClick(ticket) | currency: "INR"}}</td>
+            <td>{{ticket.totalprice | currency: "INR"}}</td>
          
           </tr>  
         </tbody>  
