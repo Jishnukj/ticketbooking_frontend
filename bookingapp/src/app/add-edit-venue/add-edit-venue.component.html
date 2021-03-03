@@ -14,17 +14,18 @@
   
             <div class="form-group">
                 <label for="seatingCapacity">Seating Capacity</label>
-                <input type="text" formControlName="seatingCapacity" class="form-control" [(ngModel)]="Venues.total_seats" [ngClass]="{'is-invalid': (submitted || addform.get('seatingCapacity')!.touched ||
+                <input type="number" formControlName="seatingCapacity" class="form-control" [(ngModel)]="Venues.total_seats" [ngClass]="{'is-invalid': (submitted || addform.get('seatingCapacity')!.touched ||
                     addform.get('seatingCapacity')!.dirty) && addform.get('seatingCapacity')!.errors}" >
                 <div  *ngIf ="(submitted || addform.get('seatingCapacity')!.touched ||
                     addform.get('seatingCapacity')!.dirty) && addform.get('seatingCapacity')!.errors" class="invalid-feedback">
                     <div *ngIf="addform.get('seatingCapacity')!.errors!.required" >Seating Capacity is required</div>
                 </div>  
             </div>
+            
   
             <div class="form-group">
               <label for="ticketPrice"> Price per Seat</label>
-              <input type="text" formControlName="ticketPrice" class="form-control" [(ngModel)]="Venues.ticket_rate" [ngClass]="{'is-invalid': (submitted || addform.get('ticketPrice')!.touched ||
+              <input type="number" formControlName="ticketPrice" class="form-control" [(ngModel)]="Venues.ticket_rate" [ngClass]="{'is-invalid': (submitted || addform.get('ticketPrice')!.touched ||
                   addform.get('ticketPrice')!.dirty) && addform.get('ticketPrice')!.errors}" >
               <div  *ngIf ="(submitted || addform.get('ticketPrice')!.touched ||
                   addform.get('ticketPrice')!.dirty) && addform.get('ticketPrice')!.errors" class="invalid-feedback">

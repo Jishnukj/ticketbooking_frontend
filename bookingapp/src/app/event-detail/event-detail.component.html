@@ -147,7 +147,7 @@
                     <div class="mt-3 col-12">
                       <div class="alert alert-info text-center shadow" role="alert">
                        <strong *ngIf ="event.approval_status == 'unchecked'"> Approve or reject?</strong>
-                       <a [routerLink]="['/booking/',event.event_id,event.ticket_rate]" class="card-link" *ngIf="event.approval_status == 'approve'">ticket sale</a>
+                       <a [routerLink]="['/booking/',event.event_id]" class="card-link" *ngIf="event.approval_status == 'approve'">ticket sale</a>
                       </div>
                     </div>          
           

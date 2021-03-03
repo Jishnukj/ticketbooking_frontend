@@ -30,8 +30,7 @@ export class AddEditVenueComponent implements OnInit {
     this.addform = this.fb.group({
       venueName:['',Validators.required],
       seatingCapacity:['',Validators.required],
-      ticketPrice:['',Validators.required],
-      
+      ticketPrice:['', Validators.required],
     });
   }
   addVenue(){

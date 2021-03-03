@@ -26,4 +26,8 @@ export class BookingService {
   {
       return this.http.get<any>(this.apiurl+`/${id}`);
   }
+  getBookingByEventId(id:number): Observable<any>
+  {
+      return this.http.get<any>(this.apiurl+`/eventbooking/${id}`);
+  }
 }
